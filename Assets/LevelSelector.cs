@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class LevelSelector : MonoBehaviour {
 
@@ -44,12 +45,14 @@ public class LevelSelector : MonoBehaviour {
         {
             Lev1.transform.SetAsLastSibling();
             description.text = "The test level. There's barely anything here.";
+            
         }
 
         else if (button.name == "L2Btn")
         {
             Lev2.transform.SetAsLastSibling();
             description.text = "A winding path that slowly pushes enemies toward the center.";
+
         }
 
         else if (button.name == "L3Btn")
@@ -64,5 +67,27 @@ public class LevelSelector : MonoBehaviour {
             description.text = "Return to the main menu.";
 
         }
+    }
+
+    public void buttonclick(Button button)
+    {
+        if (button.name == "L1Btn")
+        {
+            SceneManager.LoadScene("testzone");
+            Debug.Log("Player selected the Test Zone");
+        }
+
+        else if (button.name == "L2Btn")
+        {
+            //SceneManager.LoadScene("Spiral");
+            Debug.Log("Player selected the Spiral");
+        }
+
+        else if (button.name == "L3Btn")
+        {
+            //SceneManager.LoadScene("Fork");
+            Debug.Log("Player selected the Fork");
+        }
+
     }
 }
