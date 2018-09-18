@@ -18,7 +18,7 @@ public class CameraMotion : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
+       
         yaw += speedH * Input.GetAxis("Mouse X");
         pitch -= speedV * Input.GetAxis("Mouse Y");
 
