@@ -9,7 +9,7 @@ public class CameraMotion : MonoBehaviour {
 
     private float yaw = 0.0f;
     private float pitch = 0.0f;
-    private bool cursorlock = true;
+    //private bool cursorlock = true;
 
 	// Use this for initialization
 	void Start () {
@@ -24,12 +24,14 @@ public class CameraMotion : MonoBehaviour {
 
         transform.eulerAngles = new Vector3(pitch, yaw, 0.0f);
 
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
+        //if (Input.GetKeyDown(KeyCode.Escape))
+        //{
 
-            unlockcursor();
+        //    unlockcursor();
 
-        }
+        //}
+
+        
 	}
 
 
@@ -39,9 +41,10 @@ public class CameraMotion : MonoBehaviour {
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    void unlockcursor()
-    {
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
-    }
-}
+    //void unlockcursor()
+    //{
+    //    Cursor.visible = true;
+    //    Cursor.lockState = CursorLockMode.None;
+    //}
+
+} //commented out the above if statement. Functionality of the function within moved to  pause script.
