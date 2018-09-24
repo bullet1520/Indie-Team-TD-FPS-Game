@@ -1,43 +1,28 @@
 fileFormatVersion: 2
-guid: e3f3acd2bbd3a104c95d067cf6fc7589
+guid: b5f50e719ba7e7c41bdcba484f2c9475
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: group2
-    100002: pCube2
-    100004: pCube3
-    100006: pCube4
-    100008: polySurface1
-    100010: polySurface2
-    100012: polySurface3
-    100014: //RootNode
-    400000: group2
-    400002: pCube2
-    400004: pCube3
-    400006: pCube4
-    400008: polySurface1
-    400010: polySurface2
-    400012: polySurface3
-    400014: //RootNode
+    100000: Barrel
+    100002: Stand
+    100004: Turret
+    100006: //RootNode
+    400000: Barrel
+    400002: Stand
+    400004: Turret
+    400006: //RootNode
     2100000: TurretAMat
-    2300000: pCube2
-    2300002: pCube3
-    2300004: pCube4
-    2300006: polySurface1
-    2300008: polySurface2
-    2300010: polySurface3
-    3300000: pCube2
-    3300002: pCube3
-    3300004: pCube4
-    3300006: polySurface1
-    3300008: polySurface2
-    3300010: polySurface3
-    4300000: pCube2
-    4300002: pCube4
-    4300004: pCube3
-    4300006: polySurface1
-    4300008: polySurface2
-    4300010: polySurface3
+    2300000: Barrel
+    2300002: Stand
+    2300004: Turret
+    3300000: Barrel
+    3300002: Stand
+    3300004: Turret
+    4300000: Barrel
+    4300002: Turret
+    4300004: Stand
+    7400000: Take 001
+    9500000: //RootNode
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -113,7 +98,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

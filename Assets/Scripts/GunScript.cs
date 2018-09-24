@@ -15,7 +15,7 @@ public class GunScript : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1") && !PauseMenuScript.Paused)
         {
             if (reloadtimer <= 1)
             { Shoot(); }
@@ -25,7 +25,7 @@ public class GunScript : MonoBehaviour {
         {
             reloadtag.SetActive(false);
         }
-        else if (reloadtimer > 1)
+        else if (reloadtimer > 1 && !PauseMenuScript.Paused)
         { reloadtimer = reloadtimer - 1; }
 	}
 

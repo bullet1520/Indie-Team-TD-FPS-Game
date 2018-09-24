@@ -47,12 +47,12 @@ public class EnemyBehaviour : MonoBehaviour {
         if (Vector3.Distance(transform.position, target.position) < 3f) //if close enough to target
         {
             nav.enabled = false; // stop moving
-            if (hasHit == 0) //check a timer to keep it from hitting every frame, rather hit every couple seconds
+            if (hasHit == 0 && !PauseMenuScript.Paused) //check a timer to keep it from hitting every frame, rather hit every couple seconds
             {
                 HitTarget();
                 hasHit = 100;
             }
-            else
+            else if (!PauseMenuScript.Paused)
             { hasHit = hasHit - 1; } 
         }
         else // if not close enough to target

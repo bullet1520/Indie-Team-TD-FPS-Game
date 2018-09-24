@@ -8,12 +8,12 @@ public class PauseMenuScript : MonoBehaviour {
     public static bool Paused = false;
 
     public GameObject pauseMenuUI;
-    public GameObject PlayerCamera;
+   
 
 
     void Start()
     {
-        
+        ResumeGame();
     }
 
 	// Update is called once per frame
@@ -41,8 +41,7 @@ public class PauseMenuScript : MonoBehaviour {
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         Paused = false;
-        CameraMotion FPC = PlayerCamera.GetComponent<CameraMotion>();
-        FPC.enabled = true;
+       
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
     }
@@ -52,10 +51,10 @@ public class PauseMenuScript : MonoBehaviour {
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         Paused = true;
-        CameraMotion FPC = PlayerCamera.GetComponent<CameraMotion>();
+        
         Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = true;
-        FPC.enabled = false;
+        
     }
 
 
