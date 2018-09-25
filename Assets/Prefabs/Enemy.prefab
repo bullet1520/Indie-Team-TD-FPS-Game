@@ -125,9 +125,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9de59bd644b30604782eae2a7e30d64f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Target: {fileID: 1374765017901616, guid: 2659681f0f0bbaf4c957c7162953900e, type: 2}
+  Target: {fileID: 0}
   targetScript: {fileID: 0}
-  ownHealth: 30
+  ownHealth: 10
 --- !u!195 &195466690886501312
 NavMeshAgent:
   m_ObjectHideFlags: 1
