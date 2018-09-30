@@ -1,0 +1,353 @@
+fileFormatVersion: 2
+guid: 0a573ae86d0f45345a634324c2f5a4fa
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: curve1_instance1
+    100002: curve1_profile
+    100004: curve2_instance1
+    100006: extrudeprofileCurve1
+    100008: //RootNode
+    100010: group
+    100012: joint1
+    100014: joint10
+    100016: joint11
+    100018: joint12
+    100020: joint13
+    100022: joint14
+    100024: joint2
+    100026: joint3
+    100028: joint4
+    100030: joint5
+    100032: joint6
+    100034: joint7
+    100036: joint8
+    100038: joint9
+    100040: pCube1
+    100042: pCube11
+    100044: pCube12
+    100046: pCube14
+    100048: pCube18
+    100050: pCube18 1
+    100052: pCube19
+    100054: pCube19 1
+    100056: pCube2
+    100058: pCube20
+    100060: pCube20 1
+    100062: pCube21
+    100064: pCube21 1
+    100066: pCube22
+    100068: pCube22 1
+    100070: pCube23
+    100072: pCube24
+    100074: pCube25
+    100076: pCube27
+    100078: pCube28
+    100080: pCube29
+    100082: pCube3
+    100084: pCube30
+    100086: pCube31
+    100088: pCube32
+    100090: pCube33
+    100092: pCube34
+    100094: pCube35
+    100096: pCube5
+    100098: pCube6
+    100100: pCube7
+    100102: pCube9
+    100104: pCylinder10
+    100106: pCylinder11
+    100108: pCylinder2
+    100110: pCylinder3
+    100112: pCylinder4
+    100114: pCylinder5
+    100116: pCylinder6
+    100118: pCylinder7
+    100120: pCylinder8
+    100122: pCylinder9
+    100124: pPipe2
+    100126: pPipe2 1
+    100128: pPipe3
+    100130: pPipe3 1
+    100132: pPipe4
+    100134: pPipe4 1
+    100136: pPipe5
+    100138: pPipe5 1
+    100140: pSphere1
+    100142: ribbonCurveHistory
+    100144: ribbonMeshes
+    100146: tubeCurveHistory
+    100148: TubeMesh1
+    100150: TubeMesh3
+    100152: tubeMeshes
+    400000: curve1_instance1
+    400002: curve1_profile
+    400004: curve2_instance1
+    400006: extrudeprofileCurve1
+    400008: //RootNode
+    400010: group
+    400012: joint1
+    400014: joint10
+    400016: joint11
+    400018: joint12
+    400020: joint13
+    400022: joint14
+    400024: joint2
+    400026: joint3
+    400028: joint4
+    400030: joint5
+    400032: joint6
+    400034: joint7
+    400036: joint8
+    400038: joint9
+    400040: pCube1
+    400042: pCube11
+    400044: pCube12
+    400046: pCube14
+    400048: pCube18
+    400050: pCube18 1
+    400052: pCube19
+    400054: pCube19 1
+    400056: pCube2
+    400058: pCube20
+    400060: pCube20 1
+    400062: pCube21
+    400064: pCube21 1
+    400066: pCube22
+    400068: pCube22 1
+    400070: pCube23
+    400072: pCube24
+    400074: pCube25
+    400076: pCube27
+    400078: pCube28
+    400080: pCube29
+    400082: pCube3
+    400084: pCube30
+    400086: pCube31
+    400088: pCube32
+    400090: pCube33
+    400092: pCube34
+    400094: pCube35
+    400096: pCube5
+    400098: pCube6
+    400100: pCube7
+    400102: pCube9
+    400104: pCylinder10
+    400106: pCylinder11
+    400108: pCylinder2
+    400110: pCylinder3
+    400112: pCylinder4
+    400114: pCylinder5
+    400116: pCylinder6
+    400118: pCylinder7
+    400120: pCylinder8
+    400122: pCylinder9
+    400124: pPipe2
+    400126: pPipe2 1
+    400128: pPipe3
+    400130: pPipe3 1
+    400132: pPipe4
+    400134: pPipe4 1
+    400136: pPipe5
+    400138: pPipe5 1
+    400140: pSphere1
+    400142: ribbonCurveHistory
+    400144: ribbonMeshes
+    400146: tubeCurveHistory
+    400148: TubeMesh1
+    400150: TubeMesh3
+    400152: tubeMeshes
+    2100000: blinn11
+    2100002: blinn12
+    2100004: blinn13
+    2100006: blinn14
+    2100008: blinn15
+    2100010: lambert4
+    4300000: pCube1
+    4300002: pCube32
+    4300004: pCube28
+    4300006: pCylinder4
+    4300008: pCylinder11
+    4300010: pCube31
+    4300012: pCylinder3
+    4300014: pCylinder10
+    4300016: pCube30
+    4300018: pCube14
+    4300020: pCube34
+    4300022: pCube29
+    4300024: pCylinder8
+    4300026: pCylinder7
+    4300028: pCube27
+    4300030: pCylinder9
+    4300032: pCylinder6
+    4300034: pCube35
+    4300036: pCube33
+    4300038: pCube2
+    4300040: TubeMesh1
+    4300042: pCylinder2
+    4300044: pCube18
+    4300046: pCube21
+    4300048: pCube20
+    4300050: pCube22
+    4300052: pCube19
+    4300054: pPipe4
+    4300056: pPipe3
+    4300058: pPipe5
+    4300060: pPipe2
+    4300062: pCube3
+    4300064: pCube5
+    4300066: pCube25
+    4300068: pCube24
+    4300070: TubeMesh3
+    4300072: pCylinder5
+    4300074: pCube18
+    4300076: pCube21
+    4300078: pCube20
+    4300080: pCube22
+    4300082: pCube19
+    4300084: pPipe4
+    4300086: pPipe3
+    4300088: pPipe5
+    4300090: pPipe2
+    4300092: pCube23
+    4300094: pCube6
+    4300096: pCube12
+    4300098: pCube9
+    4300100: pCube7
+    4300102: pCube11
+    4300104: pSphere1
+    9500000: //RootNode
+    13700000: pCube1
+    13700002: pCube11
+    13700004: pCube12
+    13700006: pCube14
+    13700008: pCube18
+    13700010: pCube18 1
+    13700012: pCube19
+    13700014: pCube19 1
+    13700016: pCube2
+    13700018: pCube20
+    13700020: pCube20 1
+    13700022: pCube21
+    13700024: pCube21 1
+    13700026: pCube22
+    13700028: pCube22 1
+    13700030: pCube23
+    13700032: pCube24
+    13700034: pCube25
+    13700036: pCube27
+    13700038: pCube28
+    13700040: pCube29
+    13700042: pCube3
+    13700044: pCube30
+    13700046: pCube31
+    13700048: pCube32
+    13700050: pCube33
+    13700052: pCube34
+    13700054: pCube35
+    13700056: pCube5
+    13700058: pCube6
+    13700060: pCube7
+    13700062: pCube9
+    13700064: pCylinder10
+    13700066: pCylinder11
+    13700068: pCylinder2
+    13700070: pCylinder3
+    13700072: pCylinder4
+    13700074: pCylinder5
+    13700076: pCylinder6
+    13700078: pCylinder7
+    13700080: pCylinder8
+    13700082: pCylinder9
+    13700084: pPipe2
+    13700086: pPipe2 1
+    13700088: pPipe3
+    13700090: pPipe3 1
+    13700092: pPipe4
+    13700094: pPipe4 1
+    13700096: pPipe5
+    13700098: pPipe5 1
+    13700100: pSphere1
+    13700102: TubeMesh1
+    13700104: TubeMesh3
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
