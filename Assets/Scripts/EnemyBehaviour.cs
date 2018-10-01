@@ -6,13 +6,17 @@ public class EnemyBehaviour : MonoBehaviour {
     
     //9/10/2018: this version of enemy is only capable of moving towards a target and dying when hit by the player's raycasts
     public GameObject Target;
+    public Objective targetScript;   
+    public GameObject RobotRenderer;
+    public float ownHealth = 10f;
+    public ParticleSystem robotDeathExplosion;
 
-    public Objective targetScript;
-    int hasHit;
-    
+
     Transform target;
-    public float ownHealth = 30f;
     UnityEngine.AI.NavMeshAgent nav;
+    private int hasHit;
+    private bool isdead = false;
+    private int deathtimer = 100;
 
 
     void Awake()
@@ -29,7 +33,7 @@ public class EnemyBehaviour : MonoBehaviour {
 
         if (ownHealth <= 0f)
         {
-            Die();
+            isdead = true;
         }
     }
 
@@ -41,28 +45,45 @@ public class EnemyBehaviour : MonoBehaviour {
 
     void Update()
     {
-         //this whole mess is doing the following: 
-         //if the enemy unit is within a small distance of its target it stops moving and attempts to deal damage to the target
-         
-        if (Vector3.Distance(transform.position, target.position) < 3f) //if close enough to target
-        {
-            nav.enabled = false; // stop moving
-            if (hasHit == 0 && !PauseMenuScript.Paused) //check a timer to keep it from hitting every frame, rather hit every couple seconds
+        
+        
+        if (isdead) //what is this mess doing
+        { //if the robot has been killed
+            nav.enabled = false; //stop moving
+            if (deathtimer == 0) 
+            { Die(); } //when you are done exploding delete yourself
+            else if (deathtimer == 100)
             {
-                HitTarget();
-                hasHit = 100;
+                robotDeathExplosion.Play(); //play an explosion
+                RobotRenderer.SetActive(false); //dissappear
+                deathtimer = deathtimer - 1; //start a timer
             }
-            else if (!PauseMenuScript.Paused)
-            { hasHit = hasHit - 1; } 
+            else { deathtimer = deathtimer - 1; } //wait till the explosion is about done playing
         }
-        else // if not close enough to target
+        else if (!isdead)
         {
-            nav.enabled = true; // keep moving at the target
-            nav.SetDestination(target.position);
+            if (Vector3.Distance(transform.position, target.position) < 3f) //if close enough to target
+            {
+                nav.enabled = false; // stop moving
+                if (hasHit == 0 && !PauseMenuScript.Paused && !isdead) //check a timer to keep it from hitting every frame, rather hit every couple seconds
+                {
+                    HitTarget();
+                    hasHit = 100;
+                }
+                else if (!PauseMenuScript.Paused && !isdead)
+                { hasHit = hasHit - 1; }
+            }
+            else // if not close enough to target
+            {
+                nav.enabled = true; // keep moving at the target
+                nav.SetDestination(target.position);
+            }
+
+            if (hasHit != 0) //the timer still goes down if the target has moved
+            { hasHit = hasHit - 1; }
+            transform.eulerAngles = new Vector3(0.0f, 90f, 0.0f); //this is only in place because the model from maya keeps coming out facing the wrong way
         }
 
-        if (hasHit != 0) //the timer still goes down if the target has moved
-        { hasHit = hasHit - 1; }
        
     }
 
