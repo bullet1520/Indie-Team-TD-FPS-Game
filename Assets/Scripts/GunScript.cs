@@ -9,9 +9,13 @@ public class GunScript : MonoBehaviour {
     public Animator turretAnimator;
     public GameObject reloadtag;
     public Slider enemyHealthSlider;
+    public ParticleSystem MuzzleFlare;
+
+    private AudioSource turretShot;
+
     private void Awake()
     {
-        
+        turretShot = GetComponent<AudioSource>();
         reloadtag.SetActive(false);
     }
 
@@ -40,7 +44,8 @@ public class GunScript : MonoBehaviour {
 
     void Shoot()
     {
-       
+        turretShot.Play();
+        MuzzleFlare.Play();
         RaycastHit hit;
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit))
         {

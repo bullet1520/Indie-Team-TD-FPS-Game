@@ -9,7 +9,7 @@ public class EnemyBehaviour : MonoBehaviour {
 
     public Objective targetScript;
     int hasHit;
-   
+    
     Transform target;
     public float ownHealth = 30f;
     UnityEngine.AI.NavMeshAgent nav;
