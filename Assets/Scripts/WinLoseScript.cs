@@ -13,20 +13,23 @@ public class WinLoseScript : MonoBehaviour
     public GameObject Spawner;
     public GameObject Enemy;
 
-    public GameObject InstrText;
+   
 
-    private int Life;
+   public int Life;
 
 
     // Use this for initialization
     void Start ()
     {
-        Life = gameObject.GetComponent<Objective>().objectiveHealth;
+        LoseScreen.SetActive(false);
+        WinScreen.SetActive(false);
+        
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
+        Life = gameObject.GetComponent<Objective>().objectiveHealth;
         if (Life <= 0)
         {
             Lose();
@@ -44,20 +47,22 @@ public class WinLoseScript : MonoBehaviour
 
     void Lose()
     {
+        PauseMenuScript.Paused = true;
         LoseScreen.SetActive(true);
         Time.timeScale = 0f;
-        InstrText.SetActive(false);
-        Cursor.lockState = CursorLockMode.Confined;
+        
+        Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 
     }
 
     void Win()
     {
+        PauseMenuScript.Paused = true;
         WinScreen.SetActive(true);
         Time.timeScale = 0f;
-        InstrText.SetActive(false);
-        Cursor.lockState = CursorLockMode.Confined;
+        
+        Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
     }
 
