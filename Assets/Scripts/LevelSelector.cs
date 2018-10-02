@@ -85,7 +85,7 @@ public class LevelSelector : MonoBehaviour {
 
         else if (button.name == "L3Btn")
         {
-            //SceneManager.LoadScene("Fork");
+            SceneManager.LoadScene("Fork");
             Debug.Log("Player selected the Fork");
         }
 
