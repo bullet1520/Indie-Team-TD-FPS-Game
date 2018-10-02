@@ -56,7 +56,7 @@ public class WinLoseScript : MonoBehaviour
 
     }
 
-    void Win()
+    public void Win()
     {
         PauseMenuScript.Paused = true;
         WinScreen.SetActive(true);

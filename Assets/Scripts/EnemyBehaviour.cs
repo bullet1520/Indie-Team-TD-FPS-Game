@@ -10,7 +10,8 @@ public class EnemyBehaviour : MonoBehaviour {
     public GameObject RobotRenderer;
     public float ownHealth = 10f;
     public ParticleSystem robotDeathExplosion;
-
+    public EnemySpawner enemySpawner;
+    public Animator EnemyAnimator;
 
     Transform target;
     UnityEngine.AI.NavMeshAgent nav;
@@ -39,6 +40,7 @@ public class EnemyBehaviour : MonoBehaviour {
 
     void Die()
     {
+        enemySpawner.totalDeadEnemies = enemySpawner.totalDeadEnemies + 1;
         Destroy(gameObject);
     }
 
@@ -65,6 +67,7 @@ public class EnemyBehaviour : MonoBehaviour {
             if (Vector3.Distance(transform.position, target.position) < 3f) //if close enough to target
             {
                 nav.enabled = false; // stop moving
+                EnemyAnimator.SetBool("isattacking", true);
                 if (hasHit == 0 && !PauseMenuScript.Paused && !isdead) //check a timer to keep it from hitting every frame, rather hit every couple seconds
                 {
                     HitTarget();
@@ -77,6 +80,7 @@ public class EnemyBehaviour : MonoBehaviour {
             {
                 nav.enabled = true; // keep moving at the target
                 nav.SetDestination(target.position);
+                EnemyAnimator.SetBool("isattacking", false);
             }
 
             if (hasHit != 0) //the timer still goes down if the target has moved

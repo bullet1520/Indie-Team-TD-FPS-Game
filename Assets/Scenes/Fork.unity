@@ -174,6 +174,12 @@ GameObject:
   m_PrefabParentObject: {fileID: 1450440947978582, guid: 2659681f0f0bbaf4c957c7162953900e,
     type: 2}
   m_PrefabInternal: {fileID: 2089334432}
+--- !u!114 &294289556 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114154143891393492, guid: 2659681f0f0bbaf4c957c7162953900e,
+    type: 2}
+  m_PrefabInternal: {fileID: 2089334432}
+  m_Script: {fileID: 11500000, guid: d0a56d9598d25a744b60b3afadf5eb9a, type: 3}
 --- !u!1 &333302761
 GameObject:
   m_ObjectHideFlags: 0
@@ -3447,6 +3453,12 @@ Prefab:
       propertyPath: HealthSlider
       value: 
       objectReference: {fileID: 2075763477}
+    - target: {fileID: 114154143891393492, guid: 2659681f0f0bbaf4c957c7162953900e,
+        type: 2}
+      propertyPath: Enemy
+      value: 
+      objectReference: {fileID: 1247442873827480, guid: 865a80b8865d1ff4c8dfc78398e93039,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2659681f0f0bbaf4c957c7162953900e, type: 2}
   m_IsPrefabParent: 0
@@ -3522,7 +3534,7 @@ Prefab:
     - target: {fileID: 114326219690563316, guid: 39881b5194cc13a4b90c7dac523e7f61,
         type: 2}
       propertyPath: chosenspawnrate
-      value: 125
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 114326219690563316, guid: 39881b5194cc13a4b90c7dac523e7f61,
         type: 2}
@@ -3534,6 +3546,21 @@ Prefab:
       propertyPath: spawnPoints.Array.data[3]
       value: 
       objectReference: {fileID: 739365275}
+    - target: {fileID: 114326219690563316, guid: 39881b5194cc13a4b90c7dac523e7f61,
+        type: 2}
+      propertyPath: winLoseScript
+      value: 
+      objectReference: {fileID: 294289556}
+    - target: {fileID: 114326219690563316, guid: 39881b5194cc13a4b90c7dac523e7f61,
+        type: 2}
+      propertyPath: totalDeadEnemies
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114326219690563316, guid: 39881b5194cc13a4b90c7dac523e7f61,
+        type: 2}
+      propertyPath: totalEnemies
+      value: 50
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 39881b5194cc13a4b90c7dac523e7f61, type: 2}
   m_IsPrefabParent: 0

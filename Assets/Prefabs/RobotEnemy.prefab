@@ -665,6 +665,8 @@ MonoBehaviour:
   RobotRenderer: {fileID: 1797365563524316}
   ownHealth: 10
   robotDeathExplosion: {fileID: 198828208571624730}
+  enemySpawner: {fileID: 0}
+  EnemyAnimator: {fileID: 95441733600911446}
 --- !u!137 &137759311946642282
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
