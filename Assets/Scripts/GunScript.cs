@@ -10,8 +10,10 @@ public class GunScript : MonoBehaviour {
     public GameObject reloadtag;
     public Slider enemyHealthSlider;
     public ParticleSystem MuzzleFlare;
-
+    EnemyBehaviour target = null;
     private AudioSource turretShot;
+    private Vector3 debughitspace;
+    private int layermask = 1 << 8;
 
     private void Awake()
     {
@@ -21,6 +23,7 @@ public class GunScript : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
+         target = null;
         if (!PauseMenuScript.Paused)
         { CheckEnemy(); }
 
@@ -41,7 +44,14 @@ public class GunScript : MonoBehaviour {
         else if (reloadtimer > 1 && !PauseMenuScript.Paused)
         { reloadtimer = reloadtimer - 1; }
 	}
-
+/*
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+     //Use the same vars you use to draw your Overlap SPhere to draw your Wire Sphere.
+     Gizmos.DrawWireSphere(debughitspace, 3f);
+    }
+    */
     void Shoot()
     {
         turretShot.Play();
@@ -49,10 +59,12 @@ public class GunScript : MonoBehaviour {
         RaycastHit hit;
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit))
         {
-            EnemyBehaviour target = hit.transform.GetComponent<EnemyBehaviour>();
-
-            if (target != null)
+            debughitspace = hit.point;
+            Collider[] targets = Physics.OverlapSphere(hit.point, 3f, layermask);
+            
+            foreach (Collider E in targets)
             {
+                target = E.transform.GetComponent<EnemyBehaviour>();
                 target.TakeDamage(damage);
             }
         }
@@ -66,10 +78,12 @@ public class GunScript : MonoBehaviour {
 
     void CheckEnemy()
     {
+        
         RaycastHit hit;
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit))
         {
-            EnemyBehaviour target = hit.transform.GetComponent<EnemyBehaviour>();
+           // Debug.DrawLine(fpsCam.transform.position, hit.point, Color.red, 5);
+             target = hit.transform.GetComponent<EnemyBehaviour>();
 
             if (target != null)
             {

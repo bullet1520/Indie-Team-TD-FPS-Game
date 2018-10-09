@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4063786544308892}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Neck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34,7 +34,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4410001925256806}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: joint6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49,7 +49,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4598043664619876}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: joint8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69,7 +69,7 @@ GameObject:
   - component: {fileID: 65579008752558456}
   - component: {fileID: 114215056761792534}
   - component: {fileID: 195715746562772582}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RobotEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84,7 +84,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4706557004965492}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: joint11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,7 +101,7 @@ GameObject:
   - component: {fileID: 4741391815778226}
   - component: {fileID: 198515479616234070}
   - component: {fileID: 199698297174835198}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116,7 +116,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4289868888370894}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: joint13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -131,7 +131,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4310944864246360}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: joint9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -146,7 +146,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4344691890793164}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: joint3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -161,7 +161,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4731328217016144}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: joint14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -178,7 +178,7 @@ GameObject:
   - component: {fileID: 4981682907463804}
   - component: {fileID: 198710853513337654}
   - component: {fileID: 199377222935697382}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -193,7 +193,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4114671021429970}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: joint10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -209,7 +209,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4460539448475654}
   - component: {fileID: 137759311946642282}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Robot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -224,7 +224,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4972001137710138}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: joint12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -241,7 +241,7 @@ GameObject:
   - component: {fileID: 4140166090694418}
   - component: {fileID: 198164277833484780}
   - component: {fileID: 199807080439164136}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Embers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -258,7 +258,7 @@ GameObject:
   - component: {fileID: 4479510403656798}
   - component: {fileID: 198828208571624730}
   - component: {fileID: 199406703491225238}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SmallExplosionEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -273,7 +273,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4849711610368650}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: joint7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -288,7 +288,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4641231708244788}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: joint1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -303,7 +303,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4287501685803126}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: joint5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -318,7 +318,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4882813426672936}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: joint4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -667,6 +667,7 @@ MonoBehaviour:
   robotDeathExplosion: {fileID: 198828208571624730}
   enemySpawner: {fileID: 0}
   EnemyAnimator: {fileID: 95441733600911446}
+  isdead: 0
 --- !u!137 &137759311946642282
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

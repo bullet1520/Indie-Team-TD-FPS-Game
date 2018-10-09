@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemySpawner : MonoBehaviour {
 
@@ -8,10 +9,12 @@ public class EnemySpawner : MonoBehaviour {
     public Transform[] spawnPoints;
     public WinLoseScript winLoseScript;
     public GameObject objectivepoint;
+    public Text enemyCounterText;
     public int totalEnemiestoStart;
     public int totalEnemies = 100;
     public int totalDeadEnemies = 0;
     public int foesSinceLastWave = 0;
+    public int totalEnemiesToBeKilled;
     public float chosenspawnrate = 250f;
     [SerializeField]
     private float currentspawntime = 0f;
@@ -23,6 +26,8 @@ public class EnemySpawner : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate ()
     {
+        totalEnemiesToBeKilled = totalEnemiestoStart - totalDeadEnemies;
+        enemyCounterText.text = "Enemies Remaining: " + totalEnemiesToBeKilled;
         if (currentspawntime <= 0 && totalEnemies >= 1)
         {
             Spawn();

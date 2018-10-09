@@ -16,7 +16,7 @@ public class EnemyBehaviour : MonoBehaviour {
     Transform target;
     UnityEngine.AI.NavMeshAgent nav;
     private int hasHit;
-    private bool isdead = false;
+    public bool isdead = false;
     private int deathtimer = 100;
 
 
@@ -58,6 +58,7 @@ public class EnemyBehaviour : MonoBehaviour {
             {
                 robotDeathExplosion.Play(); //play an explosion
                 RobotRenderer.SetActive(false); //dissappear
+                GetComponent<BoxCollider>().enabled = false;
                 deathtimer = deathtimer - 1; //start a timer
             }
             else { deathtimer = deathtimer - 1; } //wait till the explosion is about done playing
