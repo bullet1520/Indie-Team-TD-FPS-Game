@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuManager : MonoBehaviour
 {
-     //is this script depricated? what is this doing other than quitting?
+    ///is this script depricated? what is this doing other than quitting?
     //Button LevelSelect = ;
 
     public void Play()

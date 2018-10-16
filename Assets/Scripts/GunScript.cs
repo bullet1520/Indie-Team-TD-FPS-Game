@@ -2,8 +2,8 @@
 using UnityEngine.UI;
 
 public class GunScript : MonoBehaviour {
-    //this script allows the player to fire their cannon in the direction they are facing and deal damage to all enemies in a sphere around the point they fired at
-    //this script also tells the reticle to light up whenever the player is facing an enemy.
+    ///this script allows the player to fire their cannon in the direction they are facing and deal damage to all enemies in a sphere around the point they fired at
+    ///this script also tells the reticle to light up whenever the player is facing an enemy.
 
     public float damage = 10f; //public to be tweaked in engine;
     public float timeBetweenReloads = 100f; //public to be tweaked in engine;

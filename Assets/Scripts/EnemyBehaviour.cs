@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyBehaviour : MonoBehaviour {
-    //this script controls the enemy AI, telling it where to go, when to attack and when to die.
+    ///this script controls the enemy AI, telling it where to go, when to attack and when to die.
 
     
     public GameObject Target;

@@ -4,9 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class EnemySpawner : MonoBehaviour {
-    //this is one of the more complex and pivotal scripts
-    //this script controls the random spawning of enemies between spawnpoints and tracks how many enemies are left to spawn/kill
-    //it calls upon the WinLoseScript Win() function when there are no more enemies to kill
+    ///this is one of the more complex and pivotal scripts
+    ///this script controls the random spawning of enemies between spawnpoints and tracks how many enemies are left to spawn/kill
+    ///it calls upon the WinLoseScript Win() function when there are no more enemies to kill
     
 
     public GameObject enemy;

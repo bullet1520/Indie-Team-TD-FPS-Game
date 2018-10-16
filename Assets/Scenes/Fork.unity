@@ -891,6 +891,12 @@ Prefab:
       propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
       value: 0.3
       objectReference: {fileID: 0}
+    - target: {fileID: 114271679806911956, guid: ac5159988c79d784c92713644bb99f05,
+        type: 2}
+      propertyPath: ImpactDetonation
+      value: 
+      objectReference: {fileID: 1092469790368440, guid: f65abc0c7650c8f4e83ce70e990e113f,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ac5159988c79d784c92713644bb99f05, type: 2}
   m_IsPrefabParent: 0

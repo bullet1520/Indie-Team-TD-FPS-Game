@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class DeleteSelfFaster : MonoBehaviour {
-    //this is a simple script that tells an object to delete itself after a period of a second or so
-    //this is intended for instructions as the level begins.
+    ///this is a simple script that tells an object to delete itself after a period of a second or so
+    ///this is intended for instructions as the level begins.
     [SerializeField]
     private int timer;
     // Use this for initialization
@@ -18,8 +18,11 @@ public class DeleteSelfFaster : MonoBehaviour {
     {
         if (timer == 0)
         {
-            this.gameObject.SetActive(false);
+            Destroy(gameObject);
         }
-        else { timer = timer - 1; }
+        else if (!PauseMenuScript.Paused)
+        {
+            timer = timer - 1;
+        }
     }
 }
