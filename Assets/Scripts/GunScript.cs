@@ -2,15 +2,19 @@
 using UnityEngine.UI;
 
 public class GunScript : MonoBehaviour {
+    //this script allows the player to fire their cannon in the direction they are facing and deal damage to all enemies in a sphere around the point they fired at
+    //this script also tells the reticle to light up whenever the player is facing an enemy.
 
-    public float damage = 10f;
-    public float reloadtimer = 0f;
+    public float damage = 10f; //public to be tweaked in engine;
+    public float timeBetweenReloads = 100f; //public to be tweaked in engine;
     public Camera fpsCam;
     public Animator turretAnimator;
-    public GameObject reloadtag;
+    public GameObject reloadTag;
     public Slider enemyHealthSlider;
     public ParticleSystem MuzzleFlare;
-    EnemyBehaviour target = null;
+    [SerializeField]
+    private float reloadtimer = 0f;
+    private EnemyBehaviour target = null;
     private AudioSource turretShot;
     private Vector3 debughitspace;
     private int layermask = 1 << 8;
@@ -18,7 +22,7 @@ public class GunScript : MonoBehaviour {
     private void Awake()
     {
         turretShot = GetComponent<AudioSource>();
-        reloadtag.SetActive(false);
+        reloadTag.SetActive(false);
     }
 
     // Update is called once per frame
@@ -36,15 +40,17 @@ public class GunScript : MonoBehaviour {
             }
         }
 
-        if (reloadtimer == 1 && reloadtag.activeInHierarchy)
+        if (reloadtimer == 1 && reloadTag.activeInHierarchy)
         {
-            reloadtag.SetActive(false);
+            reloadTag.SetActive(false);
             turretAnimator.SetBool("Shooting", false);
         }
         else if (reloadtimer > 1 && !PauseMenuScript.Paused)
         { reloadtimer = reloadtimer - 1; }
 	}
-/*
+    //the following script makes the radius of the gun's explosion visible in the scene view. 
+    //uncomment this code if you wish to see it.
+    /*
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
@@ -62,16 +68,16 @@ public class GunScript : MonoBehaviour {
             debughitspace = hit.point;
             Collider[] targets = Physics.OverlapSphere(hit.point, 3f, layermask);
             
-            foreach (Collider E in targets)
+            foreach (Collider enemyCollidersCollected in targets)
             {
-                target = E.transform.GetComponent<EnemyBehaviour>();
+                target = enemyCollidersCollected.transform.GetComponent<EnemyBehaviour>();
                 target.TakeDamage(damage);
             }
         }
-        if (reloadtimer < 2 && !reloadtag.activeInHierarchy)
+        if (reloadtimer < 2 && !reloadTag.activeInHierarchy)
         {
-            reloadtimer = 100f;
-            reloadtag.SetActive(true);
+            reloadtimer = timeBetweenReloads;
+            reloadTag.SetActive(true);
         }
         
     }
@@ -82,9 +88,12 @@ public class GunScript : MonoBehaviour {
         RaycastHit hit;
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit))
         {
+            //the following script makes the raycasts that are being fired from the gun visible in the scene editor,
+            //uncomment if you need to see it.
            // Debug.DrawLine(fpsCam.transform.position, hit.point, Color.red, 5);
              target = hit.transform.GetComponent<EnemyBehaviour>();
-
+            //editor note, this is going to be depricated soon, we need to change the tag to allow the reticle to 
+            //display an enemy's health not just if they can be hit.
             if (target != null)
             {
                 enemyHealthSlider.value = 1;

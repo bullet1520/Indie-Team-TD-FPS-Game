@@ -5,17 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class WinLoseScript : MonoBehaviour
 {
+    //this is a simple script that tells the player whether they have won or lost when the condition occurs
+    //when the objective object this is on loses all its health it activates Lose()
+    //when the EnemySpawner script detects there are no more enemies alive that script calls this one to activate Win()
+
     public GameObject LoseScreen;
     public GameObject WinScreen;
-
     public GameObject Objective;
-
-    public GameObject Spawner;
-    public GameObject Enemy;
-
-   
-
-   public int Life;
 
 
     // Use this for initialization
@@ -23,37 +19,21 @@ public class WinLoseScript : MonoBehaviour
     {
         LoseScreen.SetActive(false);
         WinScreen.SetActive(false);
-        
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
-        Life = gameObject.GetComponent<Objective>().objectiveHealth;
-        if (Life <= 0)
-        {
-            Lose();
-        }
-
-        //if ()
-        //{
-
-        //}
-
-
-
-
+        
 	}
 
-    void Lose()
+    public void Lose()
     {
         PauseMenuScript.Paused = true;
         LoseScreen.SetActive(true);
         Time.timeScale = 0f;
-        
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-
     }
 
     public void Win()
@@ -61,7 +41,6 @@ public class WinLoseScript : MonoBehaviour
         PauseMenuScript.Paused = true;
         WinScreen.SetActive(true);
         Time.timeScale = 0f;
-        
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
     }

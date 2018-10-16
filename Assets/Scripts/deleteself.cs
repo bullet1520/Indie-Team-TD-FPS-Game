@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class deleteself : MonoBehaviour {
 
-    public int timer;
+    //this is a simple script that tells an object to delete itself after a period of a few seconds
+    //this is intended for instructions as the level begins.
+    [SerializeField]
+    private int timer;
 	// Use this for initialization
 	void Start () {
         timer = 400;

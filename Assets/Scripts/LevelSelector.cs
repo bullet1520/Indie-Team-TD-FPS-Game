@@ -6,13 +6,13 @@ using UnityEngine.SceneManagement;
 
 public class LevelSelector : MonoBehaviour {
 
-    GameObject Lev1;
-    GameObject Lev2;
-    GameObject Lev3;
-    GameObject Back;
-    GameObject DescriptionObject;
+    private GameObject Lev1;
+    private GameObject Lev2;
+    private GameObject Lev3;
+    private GameObject Back;
+    private GameObject DescriptionObject;
 
-    Text description;
+    private Text description;
 
 
 	// Use this for initialization
