@@ -12,6 +12,7 @@ public class GunScript : MonoBehaviour {
     public GameObject reloadTag;
     public Slider enemyHealthSlider;
     public ParticleSystem MuzzleFlare;
+    public GameObject ImpactDetonation;
     [SerializeField]
     private float reloadtimer = 0f;
     private EnemyBehaviour target = null;
@@ -66,6 +67,8 @@ public class GunScript : MonoBehaviour {
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit))
         {
             debughitspace = hit.point;
+            Quaternion blank = new Quaternion(0, 0, 0, 0);
+            Instantiate(ImpactDetonation, hit.point, blank);
             Collider[] targets = Physics.OverlapSphere(hit.point, 3f, layermask);
             
             foreach (Collider enemyCollidersCollected in targets)
