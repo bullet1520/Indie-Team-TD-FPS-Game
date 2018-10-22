@@ -74,7 +74,8 @@ public class GunScript : MonoBehaviour {
             foreach (Collider enemyCollidersCollected in targets)
             {
                 target = enemyCollidersCollected.transform.GetComponent<EnemyBehaviour>();
-                target.TakeDamage(damage);
+                target.TakeExplosiveDamage(damage, hit.point);
+                
             }
         }
         if (reloadtimer < 2 && !reloadTag.activeInHierarchy)

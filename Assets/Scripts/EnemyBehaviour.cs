@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class EnemyBehaviour : MonoBehaviour {
     ///this script controls the enemy AI, telling it where to go, when to attack and when to die.
-
-    
     public GameObject Target;
     public Objective targetScript;
     public GameObject RobotRenderer;
     public ParticleSystem robotDeathExplosion;
     public EnemySpawner enemySpawner;
     public Animator EnemyAnimator;
-
+    private Rigidbody myRigidbody;
     [SerializeField]
     private float ownHealth = 10f;
     private Transform target;
@@ -21,22 +19,24 @@ public class EnemyBehaviour : MonoBehaviour {
     [SerializeField]
     private bool isdead = false;
     private int deathtimer = 100;
-
+    private Vector3 cannonImpactPoint;
 
     void Awake()
     {
         targetScript = Target.GetComponent<Objective>();
         target = Target.transform;
         nav = GetComponent<UnityEngine.AI.NavMeshAgent>();
+        myRigidbody = GetComponent<Rigidbody>();
     }
 
-    public void TakeDamage(float amount)
+    public void TakeExplosiveDamage(float amount, Vector3 explosionPoint) //this needs to take a position
     {
         ownHealth -= amount;
         if (ownHealth <= 0f)
         {
             isdead = true;
         }
+        cannonImpactPoint = explosionPoint;
     }
 
     void Die()
@@ -53,11 +53,15 @@ public class EnemyBehaviour : MonoBehaviour {
         if (isdead) //what is this mess doing
         { //if the robot has been killed
             nav.enabled = false; //stop moving
+            EnemyAnimator.SetBool("isDead", true);
+            myRigidbody.constraints = RigidbodyConstraints.None;
             if (deathtimer == 100)
             {
                 robotDeathExplosion.Play(); //play an explosion
-                RobotRenderer.SetActive(false); //dissappear
-                GetComponent<BoxCollider>().enabled = false; //get rid of your collider so you dont interact with physics or raycasts
+                if (cannonImpactPoint != null)
+                    myRigidbody.AddExplosionForce(200, cannonImpactPoint, 3.0f, 3.0f);
+                //RobotRenderer.SetActive(false); //dissappear
+                //GetComponent<BoxCollider>().enabled = false; //get rid of your collider so you dont interact with physics or raycasts
                 deathtimer = deathtimer - 1; //start a timer
             }
             else if (deathtimer == 0)

@@ -8,7 +8,6 @@ public class EnemySpawner : MonoBehaviour {
     ///this script controls the random spawning of enemies between spawnpoints and tracks how many enemies are left to spawn/kill
     ///it calls upon the WinLoseScript Win() function when there are no more enemies to kill
     
-
     public GameObject enemy;
     public Transform[] spawnPoints;
     public WinLoseScript winLoseScript;
