@@ -10,9 +10,10 @@ public class EnemyBehaviour : MonoBehaviour {
     public ParticleSystem robotDeathExplosion;
     public EnemySpawner enemySpawner;
     public Animator EnemyAnimator;
+    public float ownHealth = 10f;
     private Rigidbody myRigidbody;
     [SerializeField]
-    private float ownHealth = 10f;
+    
     private Transform target;
     private UnityEngine.AI.NavMeshAgent nav;
     private int hasHit;

@@ -15,7 +15,10 @@ public class GunScript : MonoBehaviour {
     public GameObject ImpactDetonation;
     [SerializeField]
     private float reloadtimer = 0f;
-    private EnemyBehaviour target = null;
+    [SerializeField]
+    private GameObject target = null;
+    [SerializeField]
+    private GameObject lastTarget;
     private AudioSource turretShot;
     private Vector3 debughitspace;
     private int layermask = 1 << 8;
@@ -30,7 +33,7 @@ public class GunScript : MonoBehaviour {
     void Update () {
          target = null;
         if (!PauseMenuScript.Paused)
-        { CheckEnemy(); }
+        { CheckIfFacingEnemy(); }
 
         if (Input.GetButtonDown("Fire1") && !PauseMenuScript.Paused)
         {
@@ -73,8 +76,18 @@ public class GunScript : MonoBehaviour {
             
             foreach (Collider enemyCollidersCollected in targets)
             {
-                target = enemyCollidersCollected.transform.GetComponent<EnemyBehaviour>();
-                target.TakeExplosiveDamage(damage, hit.point);
+                target = enemyCollidersCollected.transform.gameObject;
+                if (target.GetComponent<EnemyBehaviour>() != null)
+                {
+                    EnemyRobotHit(target.GetComponent<EnemyBehaviour>(), hit.point);
+                }
+                else if (target.GetComponent<UFOBehaviour>() != null)
+                {
+                    EnemyUFOHit(target.GetComponent<UFOBehaviour>());
+                }
+
+
+               
                 
             }
         }
@@ -86,7 +99,18 @@ public class GunScript : MonoBehaviour {
         
     }
 
-    void CheckEnemy()
+    void EnemyRobotHit(EnemyBehaviour targetScript, Vector3 ExplosionLocation)
+    {
+        targetScript.TakeExplosiveDamage(damage, ExplosionLocation);
+    }
+
+    void EnemyUFOHit(UFOBehaviour targetScript)
+    {
+        targetScript.TakeDamage(damage);
+    }
+
+
+    void CheckIfFacingEnemy()
     {
         
         RaycastHit hit;
@@ -94,18 +118,45 @@ public class GunScript : MonoBehaviour {
         {
             //the following script makes the raycasts that are being fired from the gun visible in the scene editor,
             //uncomment if you need to see it.
-           // Debug.DrawLine(fpsCam.transform.position, hit.point, Color.red, 5);
-             target = hit.transform.GetComponent<EnemyBehaviour>();
-            //editor note, this is going to be depricated soon, we need to change the tag to allow the reticle to 
-            //display an enemy's health not just if they can be hit.
+            //Debug.DrawLine(fpsCam.transform.position, hit.point, Color.red, 1);
+            if (hit.transform.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+            {
+                target = hit.transform.gameObject;
+            }
+
+
+
+            
             if (target != null)
             {
-                enemyHealthSlider.value = 1;
+                if (target.GetComponent<EnemyBehaviour>() != null)
+                {
+                    collectRobotHealthForDisplay(target.GetComponent<EnemyBehaviour>());
+                }
+                else if (target.GetComponent<UFOBehaviour>() != null)
+                {
+                    collectUFOHealthForDisplay(target.GetComponent<UFOBehaviour>());
+                }
+                 //else if (target.GetCompenent<WhateverInameotherenemyscriptsto>() != null)
+
             }
             else
             {
                 enemyHealthSlider.value = 0;
             }
+
         }
+        else { enemyHealthSlider.value = 0; }
     }
+
+    void collectRobotHealthForDisplay(EnemyBehaviour enemyScript)
+    {
+        enemyHealthSlider.value = (enemyScript.ownHealth * 100) / 10;
+    }
+    void collectUFOHealthForDisplay(UFOBehaviour ufoScript)
+    {
+        enemyHealthSlider.value = (ufoScript.health * 100) / 40;
+    }
+
+
 }

@@ -13,14 +13,16 @@ public class EnemySpawner : MonoBehaviour {
     public WinLoseScript winLoseScript;
     public GameObject objectivepoint;
     public Text enemyCounterText;
+    public Transform[] UFOSpawnPoints;
 
     public int totalEnemiestoStart; //all of these are only public because i found it useful to tweak them during runtime
     public int totalEnemies = 100;
     public int totalDeadEnemies = 0;
     public int foesSinceLastWave = 0;
+    private int foesSinceLastUFO = 0;
     public int totalEnemiesToBeKilled;
 
-    public float chosenspawnrate = 250f;
+    public float chosenspawnrate = 275f;
     [SerializeField]
     private float currentspawntime = 0f;
 	// Use this for initialization
@@ -45,7 +47,12 @@ public class EnemySpawner : MonoBehaviour {
 
         if (foesSinceLastWave == 5)
         { //this makes the spawn timer shorten every 5 enemies killed
-            DecreaseSpawnRate();
+            IncreaseSpawnRate();
+        }
+
+        if (foesSinceLastUFO == 10)
+        {
+            SpawnUFO();
         }
 
         if (totalEnemies == 0 && totalDeadEnemies == totalEnemiestoStart)
@@ -55,9 +62,17 @@ public class EnemySpawner : MonoBehaviour {
 
 	}
 
-    void DecreaseSpawnRate()
+    public void UFOIncreasesSpawnRate()
     {
-        chosenspawnrate = chosenspawnrate - 25;
+        //to be called if a ufo object makes it to its destination without being shot down by the player
+        chosenspawnrate = chosenspawnrate - 15;
+        totalEnemies = totalEnemies + 5;
+        totalEnemiestoStart = totalEnemiestoStart + 5;
+    }
+
+    void IncreaseSpawnRate()
+    {
+        chosenspawnrate = chosenspawnrate - 15;
         foesSinceLastWave = 0;
     }
 
@@ -72,5 +87,10 @@ public class EnemySpawner : MonoBehaviour {
         spawnedScript.enemySpawner = GetComponent<EnemySpawner>();
         totalEnemies = totalEnemies - 1;
         foesSinceLastWave = foesSinceLastWave + 1;
+    }
+
+    void SpawnUFO()
+    {
+
     }
 }
