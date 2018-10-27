@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class UFOBehaviour : MonoBehaviour {
 
-    public Transform objectivePoint;
-    public float health = 40f;
+    public Transform objectivePoint; //this is assigned by the enemyspawner script
+    public float health = 40f; //this is accessed by the gunscript
+    public EnemySpawner mySpawnerScript; //this is assigned by the enemyspawner script.
 
     [SerializeField]
     private float speed = 15f;
@@ -21,7 +22,8 @@ public class UFOBehaviour : MonoBehaviour {
     private GameObject myOwnCockpit;
     
 	
-	void Awake () {
+	void Awake ()
+    {
         aerialObjective = new Vector3(objectivePoint.position.x, 20, objectivePoint.position.z);
 	}
 	
@@ -34,9 +36,8 @@ public class UFOBehaviour : MonoBehaviour {
         else
         {
             Move();
+            CheckIfLanded();
         }
-       
-
 	}
 
     private void Move()
@@ -49,10 +50,8 @@ public class UFOBehaviour : MonoBehaviour {
             else
             {
                 float step = speed * Time.deltaTime;
-
                 transform.position = Vector3.MoveTowards(transform.position, aerialObjective, step);
-            }
-            
+            }  
         }
         else if (!atAerialObjective && this.transform.position == aerialObjective)
         {
@@ -91,6 +90,11 @@ public class UFOBehaviour : MonoBehaviour {
 
     private void CheckIfLanded()
     {
+        if (transform.position == objectivePoint.position)
+        {
+            mySpawnerScript.UFOIncreasesSpawnRate();
+            Destroy(gameObject);
+        }
         //tell the spawner to accelerate the rate at which enemies are spawned then die if you have
     }
 

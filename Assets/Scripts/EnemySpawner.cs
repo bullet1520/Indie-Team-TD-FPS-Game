@@ -7,20 +7,32 @@ public class EnemySpawner : MonoBehaviour {
     ///this is one of the more complex and pivotal scripts
     ///this script controls the random spawning of enemies between spawnpoints and tracks how many enemies are left to spawn/kill
     ///it calls upon the WinLoseScript Win() function when there are no more enemies to kill
-    
+
     public GameObject enemy;
     public Transform[] spawnPoints;
     public WinLoseScript winLoseScript;
     public GameObject objectivepoint;
     public Text enemyCounterText;
     public Transform[] UFOSpawnPoints;
-
-    public int totalEnemiestoStart; //all of these are only public because i found it useful to tweak them during runtime
-    public int totalEnemies = 100;
+    [SerializeField]
+    private GameObject UFO;
+    [SerializeField]
+    private Transform[] UFOObjectivePoints;
+    [SerializeField]
+    private int totalEnemiestoStart; //all of these are only public because i found it useful to tweak them during runtime
+    [SerializeField]
+    private int totalEnemies = 100;
+    
     public int totalDeadEnemies = 0;
-    public int foesSinceLastWave = 0;
+    [SerializeField]
+    private int foesSinceLastWave = 0;
+    [SerializeField]
     private int foesSinceLastUFO = 0;
-    public int totalEnemiesToBeKilled;
+    [SerializeField]
+    private int totalEnemiesToBeKilled;
+
+    public int debugUFOSpawnPointIndex;
+    public int debugUFOObjectiveIndex;
 
     public float chosenspawnrate = 275f;
     [SerializeField]
@@ -55,7 +67,7 @@ public class EnemySpawner : MonoBehaviour {
             SpawnUFO();
         }
 
-        if (totalEnemies == 0 && totalDeadEnemies == totalEnemiestoStart)
+        if (totalEnemies <= 0 && totalDeadEnemies == totalEnemiestoStart)
         { //this tells WinLoseScript to tell the player they won when all enemies are dead.
             winLoseScript.Win();
         }
@@ -79,18 +91,52 @@ public class EnemySpawner : MonoBehaviour {
     void SpawnEnemy()
     {
         int spawnPointIndex = Random.Range(0, spawnPoints.Length);
-        
-        Instantiate(enemy, spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
         EnemyBehaviour spawnedScript = enemy.GetComponent<EnemyBehaviour>();
-        
-            spawnedScript.Target = objectivepoint;
+        spawnedScript.Target = objectivepoint;
         spawnedScript.enemySpawner = GetComponent<EnemySpawner>();
+        Instantiate(enemy, spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
+        
+        
+           
         totalEnemies = totalEnemies - 1;
         foesSinceLastWave = foesSinceLastWave + 1;
+        foesSinceLastUFO = foesSinceLastUFO + 1;
     }
 
     void SpawnUFO()
     {
+        if (UFOSpawnPoints.Length != UFOObjectivePoints.Length)
+        {
+            Debug.Log("ERROR: UFO spawnpoints do not have a usable number of objective points!");
+        }
+        else
+        {
+            int spawnPointIndex = Random.Range(0, UFOSpawnPoints.Length);
+            debugUFOSpawnPointIndex = spawnPointIndex;
+
+            UFOBehaviour spawnedScript = UFO.GetComponent<UFOBehaviour>();
+            spawnedScript.mySpawnerScript = GetComponent<EnemySpawner>();
+            spawnedScript.objectivePoint = UFOObjectivePoints[spawnPointIndex];
+            Instantiate(UFO, UFOSpawnPoints[spawnPointIndex].position, UFOSpawnPoints[spawnPointIndex].rotation);
+          
+            foesSinceLastUFO = 0;
+            debugUFOObjectiveIndex = spawnPointIndex;
+        }
         //spawn a ufo every 10 enemies that have been spawned so the player has a little extra challenge to it.
     }
+    /*
+     
+
+    void AssignObjectivePointsForUFOs()
+    {
+        if (UFOSpawnPoints.Length != UFOObjectivePoints.Length)
+        {
+            Debug.Log("ERROR: UFO spawnpoints do not have a usable number of objective points!");
+        }
+        else
+        {
+            
+        }
+    }*/
+
 }
