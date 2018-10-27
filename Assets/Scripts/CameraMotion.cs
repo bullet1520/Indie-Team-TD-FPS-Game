@@ -12,8 +12,9 @@ public class CameraMotion : MonoBehaviour {
 
     private float yaw = 0.0f;
     private float pitch = 0.0f;
-    //private bool cursorlock = true;
 
+    public float currentYRotationForWaypoints;
+    
 	// Use this for initialization
 	void Start () {
        
@@ -23,8 +24,8 @@ public class CameraMotion : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-       
 
+        GetCurrentYRotationForWaypoints();
         if (!PauseMenuScript.Paused && !Controller)
         {
             yaw += speedH * Input.GetAxis("Mouse X");
@@ -58,17 +59,6 @@ public class CameraMotion : MonoBehaviour {
 
             transform.eulerAngles = new Vector3(0.0f, yaw, pitch);
         }
-
-
-
-        //if (Input.GetKeyDown(KeyCode.Escape))
-        //{
-
-        //    unlockcursor();
-
-        //}
-
-
     }
 
 
@@ -78,10 +68,11 @@ public class CameraMotion : MonoBehaviour {
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    //void unlockcursor()
-    //{
-    //    Cursor.visible = true;
-    //    Cursor.lockState = CursorLockMode.None;
-    //}
 
-} //commented out the above if statement. Functionality of the function within moved to  pause script.
+    void GetCurrentYRotationForWaypoints()
+    {
+        currentYRotationForWaypoints = transform.eulerAngles.y;
+
+    }
+   
+} 

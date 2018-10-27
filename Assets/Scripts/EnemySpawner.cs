@@ -91,6 +91,6 @@ public class EnemySpawner : MonoBehaviour {
 
     void SpawnUFO()
     {
-
+        //spawn a ufo every 10 enemies that have been spawned so the player has a little extra challenge to it.
     }
 }

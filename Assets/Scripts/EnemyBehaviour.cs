@@ -12,7 +12,8 @@ public class EnemyBehaviour : MonoBehaviour {
     public Animator EnemyAnimator;
     public float ownHealth = 10f;
     private Rigidbody myRigidbody;
-    [SerializeField]
+
+    public float damageDealt = 3;
     
     private Transform target;
     private UnityEngine.AI.NavMeshAgent nav;
@@ -100,7 +101,7 @@ public class EnemyBehaviour : MonoBehaviour {
 
     void HitTarget()
     {
-        targetScript.TakeDamage();
+        targetScript.TakeDamage(damageDealt);
     }
   
 
