@@ -17,7 +17,7 @@ public class CameraMotion : MonoBehaviour {
     
 	// Use this for initialization
 	void Start () {
-       
+        
         lockcursor();
 	}
 	

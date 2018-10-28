@@ -7,6 +7,8 @@ public class Objective : MonoBehaviour {
     //this is a simple script that tracks how much health the objective has, updates a slider to display that to the player
     //and holds a function for the enemy to call that deals damage to it.
     [SerializeField]
+    private AudioSource DamageClink;
+    [SerializeField]
     public bool isVisibleByPlayerCamera;
     [SerializeField]
     private Camera playerCamera;
@@ -36,6 +38,7 @@ public class Objective : MonoBehaviour {
 
     public void TakeDamage(float enemydamage)
     {
+        DamageClink.Play();
         if (canTakeDamage)
         {
             objectiveHealth = objectiveHealth - enemydamage;
