@@ -50,7 +50,10 @@ public class GunScript : MonoBehaviour {
             turretAnimator.SetBool("Shooting", false);
         }
         else if (reloadtimer > 1 && !PauseMenuScript.Paused)
-        { reloadtimer = reloadtimer - 1; }
+        {
+            reloadtimer = reloadtimer - 1;
+            reloadTag.GetComponent<Slider>().value = 100 - reloadtimer;
+        }
 	}
     //the following script makes the radius of the gun's explosion visible in the scene view. 
     //uncomment this code if you wish to see it.
