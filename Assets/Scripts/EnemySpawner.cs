@@ -9,6 +9,8 @@ public class EnemySpawner : MonoBehaviour {
     ///it calls upon the WinLoseScript Win() function when there are no more enemies to kill
 
     public GameObject enemy;
+    [SerializeField]
+    private GameObject FloatBot;
     public Transform[] spawnPoints;
     public WinLoseScript winLoseScript;
     public GameObject objectivepoint;
@@ -49,7 +51,14 @@ public class EnemySpawner : MonoBehaviour {
         enemyCounterText.text = "Enemies Remaining: " + totalEnemiesToBeKilled; //this displays to the player how many enemies there are left to kill
         if (currentspawntime <= 0 && totalEnemies >= 1)
         { //this says when to spawn an enemy
-            SpawnEnemy();
+            if (foesSinceLastWave == 4)
+            {
+                SpawnFloatBot();
+            }
+            else
+            {
+                SpawnEnemy();
+            }
             currentspawntime = chosenspawnrate;
         }
         else if (currentspawntime > 0)
@@ -98,6 +107,18 @@ public class EnemySpawner : MonoBehaviour {
         
         
            
+        totalEnemies = totalEnemies - 1;
+        foesSinceLastWave = foesSinceLastWave + 1;
+        foesSinceLastUFO = foesSinceLastUFO + 1;
+    }
+
+    void SpawnFloatBot()
+    {
+        int spawnPointIndex = Random.Range(0, spawnPoints.Length);
+        FloatBotBehaviour spawnedScript = FloatBot.GetComponent<FloatBotBehaviour>();
+        spawnedScript.Target = objectivepoint;
+        spawnedScript.enemySpawner = GetComponent<EnemySpawner>();
+        Instantiate(FloatBot, spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
         totalEnemies = totalEnemies - 1;
         foesSinceLastWave = foesSinceLastWave + 1;
         foesSinceLastUFO = foesSinceLastUFO + 1;

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a755a17a0d6f2e849af9a0c9dca748b5
+guid: 8b24d5617d8786b45bcd821e96c7d456
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
@@ -35,7 +35,7 @@ ModelImporter:
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
-    resampleCurves: 0
+    resampleCurves: 1
     optimizeGameObjects: 0
     motionNodeName: 
     rigImportErrors: 
@@ -82,7 +82,7 @@ ModelImporter:
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
-  importAnimation: 0
+  importAnimation: 1
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2

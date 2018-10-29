@@ -85,6 +85,10 @@ public class GunScript : MonoBehaviour {
                 {
                     EnemyUFOHit(target.GetComponent<UFOBehaviour>());
                 }
+                else if (target.GetComponent<FloatBotBehaviour>() != null)
+                {
+                    EnemyFloatBotHit(target.GetComponent<FloatBotBehaviour>(), hit.point);
+                }
 
 
                
@@ -107,6 +111,11 @@ public class GunScript : MonoBehaviour {
     void EnemyUFOHit(UFOBehaviour targetScript)
     {
         targetScript.TakeDamage(damage);
+    }
+
+    void EnemyFloatBotHit(FloatBotBehaviour targetScript, Vector3 ExplosionLocation)
+    {
+        targetScript.TakeExplosiveDamage(damage, ExplosionLocation);
     }
 
 
@@ -137,6 +146,10 @@ public class GunScript : MonoBehaviour {
                 {
                     collectUFOHealthForDisplay(target.GetComponent<UFOBehaviour>());
                 }
+                else if (target.GetComponent<FloatBotBehaviour>() != null)
+                {
+                    collectFloatBotHealthForDisplay(target.GetComponent<FloatBotBehaviour>());
+                }
                  //else if (target.GetCompenent<WhateverInameotherenemyscriptsto>() != null)
 
             }
@@ -157,6 +170,9 @@ public class GunScript : MonoBehaviour {
     {
         enemyHealthSlider.value = (ufoScript.health * 100) / 40;
     }
-
+    void collectFloatBotHealthForDisplay(FloatBotBehaviour floatScript)
+    {
+        enemyHealthSlider.value = (floatScript.ownHealth * 100) / 30;
+    }
 
 }

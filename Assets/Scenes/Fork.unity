@@ -4464,7 +4464,7 @@ RectTransform:
   - {fileID: 684273084}
   - {fileID: 1144867644}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -5313,7 +5313,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh14552
+  m_Name: pb_Mesh6246
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -5689,7 +5689,7 @@ Prefab:
     - target: {fileID: 114630772734417042, guid: 2659681f0f0bbaf4c957c7162953900e,
         type: 2}
       propertyPath: canTakeDamage
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114630772734417042, guid: 2659681f0f0bbaf4c957c7162953900e,
         type: 2}
@@ -5829,7 +5829,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4745880945166756, guid: 39881b5194cc13a4b90c7dac523e7f61, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114326219690563316, guid: 39881b5194cc13a4b90c7dac523e7f61,
         type: 2}
@@ -5916,6 +5916,12 @@ Prefab:
       propertyPath: UFO
       value: 
       objectReference: {fileID: 1682121236998412, guid: bbd119a9ac805bb4f9e69eb637f038b0,
+        type: 2}
+    - target: {fileID: 114326219690563316, guid: 39881b5194cc13a4b90c7dac523e7f61,
+        type: 2}
+      propertyPath: FloatBot
+      value: 
+      objectReference: {fileID: 1422906565664962, guid: 5d59411790f73a64aa611d3987cb07d2,
         type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 39881b5194cc13a4b90c7dac523e7f61, type: 2}

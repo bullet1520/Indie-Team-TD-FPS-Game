@@ -45,8 +45,8 @@ public class CameraMotion : MonoBehaviour {
 
         if (!PauseMenuScript.Paused && Controller)
         {
-            yaw += speedH * Input.GetAxis("Horizontal");
-            pitch -= speedV * Input.GetAxis("Vertical");
+            yaw += speedH * Input.GetAxis("GamePadHorizontal");
+            pitch -= speedV * Input.GetAxis("GamePadVertical");
 
             if (pitch > 50)
             {
