@@ -48,7 +48,7 @@ public class EnemySpawner : MonoBehaviour {
 	void FixedUpdate ()
     {
         totalEnemiesToBeKilled = totalEnemiestoStart - totalDeadEnemies;
-        enemyCounterText.text = "Enemies Remaining: " + totalEnemiesToBeKilled; //this displays to the player how many enemies there are left to kill
+        enemyCounterText.text = totalEnemiesToBeKilled.ToString(); //this displays to the player how many enemies there are left to kill
         if (currentspawntime <= 0 && totalEnemies >= 1)
         { //this says when to spawn an enemy
             if (foesSinceLastWave == 4)
