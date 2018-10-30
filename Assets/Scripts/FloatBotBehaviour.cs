@@ -13,7 +13,7 @@ public class FloatBotBehaviour : MonoBehaviour {
     public float ownHealth = 30f;
     private Rigidbody myRigidbody;
 
-    public float damageDealt = 3;
+    public float damageDealt = 5;
 
     private Transform target;
     private UnityEngine.AI.NavMeshAgent nav;
