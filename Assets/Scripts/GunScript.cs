@@ -61,7 +61,7 @@ public class GunScript : MonoBehaviour {
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
-     //Use the same vars you use to draw your Overlap SPhere to draw your Wire Sphere.
+     //Use the same vars you use to draw your Overlap Sphere to draw your Wire Sphere.
      Gizmos.DrawWireSphere(debughitspace, 3f);
     }
     */

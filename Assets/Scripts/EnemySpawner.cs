@@ -104,9 +104,6 @@ public class EnemySpawner : MonoBehaviour {
         spawnedScript.Target = objectivepoint;
         spawnedScript.enemySpawner = GetComponent<EnemySpawner>();
         Instantiate(enemy, spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
-        
-        
-           
         totalEnemies = totalEnemies - 1;
         foesSinceLastWave = foesSinceLastWave + 1;
         foesSinceLastUFO = foesSinceLastUFO + 1;
@@ -145,19 +142,5 @@ public class EnemySpawner : MonoBehaviour {
         }
         //spawn a ufo every 10 enemies that have been spawned so the player has a little extra challenge to it.
     }
-    /*
-     
-
-    void AssignObjectivePointsForUFOs()
-    {
-        if (UFOSpawnPoints.Length != UFOObjectivePoints.Length)
-        {
-            Debug.Log("ERROR: UFO spawnpoints do not have a usable number of objective points!");
-        }
-        else
-        {
-            
-        }
-    }*/
 
 }
