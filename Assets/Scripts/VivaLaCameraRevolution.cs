@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class VivaLaCameraRevolution : MonoBehaviour {
 
-    public GameObject Target;
-    [SerializeField] int CameraSpeed;
+    [SerializeField]
+    private GameObject Target;
+    [SerializeField]
+    private int CameraSpeed = 10;
 
 	// Use this for initialization
 	void Start ()

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -11093,7 +11093,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1146320300}
-  - component: {fileID: 1146320301}
   m_Layer: 0
   m_Name: root
   m_TagString: Untagged
@@ -11117,22 +11116,6 @@ Transform:
   m_Father: {fileID: 361970804}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1146320301
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114777300885113170, guid: ac5159988c79d784c92713644bb99f05,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1146320299}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f81181a8d1bfb249916772771e5cda2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Controller: 0
-  speedH: 2
-  speedV: 2
-  currentYRotationForWaypoints: 0
 --- !u!1 &1161542125
 GameObject:
   m_ObjectHideFlags: 0

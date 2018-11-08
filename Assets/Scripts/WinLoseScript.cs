@@ -8,10 +8,12 @@ public class WinLoseScript : MonoBehaviour
     ///this is a simple script that tells the player whether they have won or lost when the condition occurs
     ///when the objective object this is on loses all its health it activates Lose()
     ///when the EnemySpawner script detects there are no more enemies alive that script calls this one to activate Win()
-
-    public GameObject LoseScreen;
-    public GameObject WinScreen;
-    public GameObject Objective;
+    [SerializeField]
+    private GameObject LoseScreen;
+    [SerializeField]
+    private GameObject WinScreen;
+    [SerializeField]
+    private GameObject Objective;
 
 
     // Use this for initialization

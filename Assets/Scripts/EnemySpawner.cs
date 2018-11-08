@@ -7,21 +7,26 @@ public class EnemySpawner : MonoBehaviour {
     ///this is one of the more complex and pivotal scripts
     ///this script controls the random spawning of enemies between spawnpoints and tracks how many enemies are left to spawn/kill
     ///it calls upon the WinLoseScript Win() function when there are no more enemies to kill
-
-    public GameObject enemy;
+    [SerializeField]
+    private GameObject enemy;
     [SerializeField]
     private GameObject FloatBot;
-    public Transform[] spawnPoints;
-    public WinLoseScript winLoseScript;
-    public GameObject objectivepoint;
-    public Text enemyCounterText;
-    public Transform[] UFOSpawnPoints;
+    [SerializeField]
+    private Transform[] spawnPoints;
+    [SerializeField]
+    private WinLoseScript winLoseScript;
+    [SerializeField]
+    private GameObject objectivepoint;
+    [SerializeField]
+    private Text enemyCounterText;
+    [SerializeField]
+    private Transform[] UFOSpawnPoints;
     [SerializeField]
     private GameObject UFO;
     [SerializeField]
     private Transform[] UFOObjectivePoints;
-    [SerializeField]
-    private int totalEnemiestoStart; //all of these are only public because i found it useful to tweak them during runtime
+    
+    public int totalEnemiestoStart; 
     [SerializeField]
     private int totalEnemies = 100;
     
@@ -32,9 +37,6 @@ public class EnemySpawner : MonoBehaviour {
     private int foesSinceLastUFO = 0;
     [SerializeField]
     private int totalEnemiesToBeKilled;
-
-    public int debugUFOSpawnPointIndex;
-    public int debugUFOObjectiveIndex;
 
     public float chosenspawnrate = 275f;
     [SerializeField]
@@ -130,15 +132,12 @@ public class EnemySpawner : MonoBehaviour {
         else
         {
             int spawnPointIndex = Random.Range(0, UFOSpawnPoints.Length);
-            debugUFOSpawnPointIndex = spawnPointIndex;
-
             UFOBehaviour spawnedScript = UFO.GetComponent<UFOBehaviour>();
             spawnedScript.mySpawnerScript = GetComponent<EnemySpawner>();
             spawnedScript.objectivePoint = UFOObjectivePoints[spawnPointIndex];
             Instantiate(UFO, UFOSpawnPoints[spawnPointIndex].position, UFOSpawnPoints[spawnPointIndex].rotation);
           
             foesSinceLastUFO = 0;
-            debugUFOObjectiveIndex = spawnPointIndex;
         }
         //spawn a ufo every 10 enemies that have been spawned so the player has a little extra challenge to it.
     }

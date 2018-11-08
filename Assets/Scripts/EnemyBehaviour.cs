@@ -4,16 +4,22 @@ using UnityEngine;
 
 public class EnemyBehaviour : MonoBehaviour {
     ///this script controls the enemy AI, telling it where to go, when to attack and when to die.
-    public GameObject Target;
-    public Objective targetScript;
-    public GameObject RobotRenderer;
-    public ParticleSystem robotDeathExplosion;
-    public EnemySpawner enemySpawner;
-    public Animator EnemyAnimator;
+    ///
     public float ownHealth = 10f;
-    private Rigidbody myRigidbody;
+    public GameObject Target;
+    public EnemySpawner enemySpawner;
 
-    public float damageDealt = 3;
+    [SerializeField]
+    private Objective targetScript;
+    [SerializeField]
+    private GameObject RobotRenderer;
+    [SerializeField]
+    private ParticleSystem robotDeathExplosion;
+    [SerializeField]
+    private Animator EnemyAnimator;
+    private Rigidbody myRigidbody;
+    [SerializeField]
+    private float damageDealt = 3;
     
     private Transform target;
     private UnityEngine.AI.NavMeshAgent nav;

@@ -5,15 +5,19 @@ using UnityEngine;
 public class FloatBotBehaviour : MonoBehaviour {
     ///this script controls the enemy AI, telling it where to go, when to attack and when to die.
     public GameObject Target;
-    public Objective targetScript;
-    public GameObject RobotRenderer;
-    public ParticleSystem robotDeathExplosion;
     public EnemySpawner enemySpawner;
-    public Animator EnemyAnimator;
+    [SerializeField]
+    private Objective targetScript;
+    [SerializeField]
+    private GameObject RobotRenderer;
+    [SerializeField]
+    private ParticleSystem robotDeathExplosion;
+    [SerializeField]
+    private Animator EnemyAnimator;
     public float ownHealth = 30f;
     private Rigidbody myRigidbody;
-
-    public float damageDealt = 5;
+    [SerializeField]
+    private float damageDealt = 5;
 
     private Transform target;
     private UnityEngine.AI.NavMeshAgent nav;

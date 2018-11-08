@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class CameraMotion : MonoBehaviour {
 
+    [SerializeField]
+    private bool Controller = false;
 
-    public bool Controller = false;
-
-    public float speedH = 2.0f;
-    public float speedV = 2.0f;
+    [SerializeField]
+    private float speedH = 2.0f;
+    [SerializeField]
+    private float speedV = 2.0f;
 
     private float yaw = 0.0f;
     private float pitch = 0.0f;

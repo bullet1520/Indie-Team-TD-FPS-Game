@@ -9,15 +9,15 @@ public class Objective : MonoBehaviour {
     [SerializeField]
     private AudioSource DamageClink;
     [SerializeField]
-    public bool isVisibleByPlayerCamera;
+    private bool isVisibleByPlayerCamera;
     [SerializeField]
     private Camera playerCamera;
     private BoxCollider myOwnCollider;
 
     [SerializeField]
     private bool canTakeDamage = true;
-   
-    public Slider HealthSlider;
+    [SerializeField]
+    private Slider HealthSlider;
     [SerializeField]
     private float objectiveHealth = 100;
     private WinLoseScript winLoseScript;
