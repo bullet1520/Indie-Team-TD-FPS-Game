@@ -17,6 +17,8 @@ public class GunScript : MonoBehaviour {
     [SerializeField]
     private Slider enemyHealthSlider;
     [SerializeField]
+    private Slider enemyHealthDecreaseSlider;
+    [SerializeField]
     private ParticleSystem MuzzleFlare;
     [SerializeField]
     private GameObject ImpactDetonation;
