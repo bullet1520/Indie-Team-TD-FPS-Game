@@ -162,23 +162,27 @@ public class GunScript : MonoBehaviour {
             else
             {
                 enemyHealthSlider.value = 0;
+                enemyHealthDecreaseSlider.value = 0;
             }
 
         }
-        else { enemyHealthSlider.value = 0; }
+        else { enemyHealthSlider.value = 0; enemyHealthDecreaseSlider.value = 0; }
     }
 
     void collectRobotHealthForDisplay(EnemyBehaviour enemyScript)
     {
         enemyHealthSlider.value = (enemyScript.ownHealth * 100) / 10;
+        enemyHealthDecreaseSlider.value = enemyScript.healthInChange;
     }
     void collectUFOHealthForDisplay(UFOBehaviour ufoScript)
     {
         enemyHealthSlider.value = (ufoScript.health * 100) / 40;
+        enemyHealthDecreaseSlider.value = ufoScript.healthInChange;
     }
     void collectFloatBotHealthForDisplay(FloatBotBehaviour floatScript)
     {
         enemyHealthSlider.value = (floatScript.ownHealth * 100) / 30;
+        enemyHealthDecreaseSlider.value = floatScript.healthInChange;
     }
 
 }

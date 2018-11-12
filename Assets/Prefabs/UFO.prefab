@@ -533,6 +533,7 @@ MonoBehaviour:
   objectivePoint: {fileID: 0}
   health: 40
   mySpawnerScript: {fileID: 0}
+  healthInChange: 100
   speed: 15
   delaytimer: 50
   atAerialObjective: 0

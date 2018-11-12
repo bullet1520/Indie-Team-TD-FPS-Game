@@ -1382,6 +1382,11 @@ Prefab:
       propertyPath: timeBetweenReloads
       value: 80
       objectReference: {fileID: 0}
+    - target: {fileID: 114271679806911956, guid: ac5159988c79d784c92713644bb99f05,
+        type: 2}
+      propertyPath: enemyHealthDecreaseSlider
+      value: 
+      objectReference: {fileID: 1039303084}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ac5159988c79d784c92713644bb99f05, type: 2}
   m_IsPrefabParent: 0
