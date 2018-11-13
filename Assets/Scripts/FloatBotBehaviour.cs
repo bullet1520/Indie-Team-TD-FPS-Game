@@ -9,6 +9,14 @@ public class FloatBotBehaviour : MonoBehaviour {
     public float ownHealth = 30f; //this is accessed by GunScript
     public float healthInChange = 100f; //this is accessed by Gunscript
     [SerializeField]
+    private Material floatbotBaseMaterial;
+    [SerializeField]
+    private Material floatbot2Material;
+    [SerializeField]
+    private Material floatbot3Material;
+    [SerializeField]
+    private Material floatbot4Material;
+    [SerializeField]
     private Objective targetScript;
     [SerializeField]
     private GameObject RobotRenderer;
@@ -16,10 +24,9 @@ public class FloatBotBehaviour : MonoBehaviour {
     private ParticleSystem robotDeathExplosion;
     [SerializeField]
     private Animator EnemyAnimator;
-    
-    private Rigidbody myRigidbody;
     [SerializeField]
     private float damageDealt = 5;
+    private Rigidbody myRigidbody;
     private float ownHealthChangePercentage;
     private Transform target;
     private UnityEngine.AI.NavMeshAgent nav;
@@ -45,6 +52,7 @@ public class FloatBotBehaviour : MonoBehaviour {
             isdead = true;
         }
         cannonImpactPoint = explosionPoint;
+        CycleMaterialUponHit();
     }
 
     void Die()
@@ -110,6 +118,22 @@ public class FloatBotBehaviour : MonoBehaviour {
     void HitTarget()
     {
         targetScript.TakeDamage(damageDealt);
+    }
+
+    void CycleMaterialUponHit()
+    {
+        if (ownHealth == 20f)
+        {
+            RobotRenderer.GetComponent<Renderer>().material = floatbot2Material;
+        }
+        else if (ownHealth == 10f)
+        {
+            RobotRenderer.GetComponent<Renderer>().material = floatbot3Material;
+        }
+        else if (ownHealth == 0)
+        {
+            RobotRenderer.GetComponent<Renderer>().material = floatbot4Material;
+        }
     }
 
 }

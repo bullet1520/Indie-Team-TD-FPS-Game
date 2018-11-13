@@ -472,7 +472,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1422906565664962}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 100.083, y: 0.419, z: 123.701515}
+  m_LocalPosition: {x: 81.50481, y: 0, z: 131.81854}
   m_LocalScale: {x: 15, y: 15, z: 15}
   m_Children:
   - {fileID: 4474402490635428}
@@ -554,6 +554,11 @@ MonoBehaviour:
   enemySpawner: {fileID: 0}
   ownHealth: 30
   healthInChange: 100
+  floatbotBaseMaterial: {fileID: 2100000, guid: a0c7b4a5bd5711b40a0fb62bf107045b,
+    type: 2}
+  floatbot2Material: {fileID: 2100000, guid: 1cf839c11aca53048b41cc826c577aa8, type: 2}
+  floatbot3Material: {fileID: 2100000, guid: 1801b72abf74de44c8bccdb067a0e64c, type: 2}
+  floatbot4Material: {fileID: 2100000, guid: 984cc94f77b904a479966251449ebf06, type: 2}
   targetScript: {fileID: 0}
   RobotRenderer: {fileID: 1143972262071082}
   robotDeathExplosion: {fileID: 198411643569804018}
