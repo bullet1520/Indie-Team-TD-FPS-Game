@@ -50,7 +50,7 @@ public class WayPointArrow : MonoBehaviour {
         Debug.Log(onScreenPos);
 
        
-            transform.position = playerCamera.ViewportToScreenPoint(new Vector3(onScreenPos.x, onScreenPos.y, 0));
+        transform.position = playerCamera.ViewportToScreenPoint(new Vector3(onScreenPos.x, onScreenPos.y, 0));
            
        
     }

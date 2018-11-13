@@ -551,12 +551,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 0}
+  enemySpawner: {fileID: 0}
+  ownHealth: 30
+  healthInChange: 100
   targetScript: {fileID: 0}
   RobotRenderer: {fileID: 1143972262071082}
   robotDeathExplosion: {fileID: 198411643569804018}
-  enemySpawner: {fileID: 0}
   EnemyAnimator: {fileID: 95737392075644850}
-  ownHealth: 30
   damageDealt: 3
   isdead: 0
 --- !u!137 &137379936184320830

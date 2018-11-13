@@ -88,7 +88,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Walk
       takeName: Take 001
-      firstFrame: 5
+      firstFrame: 6
       lastFrame: 115
       wrapMode: 0
       orientationOffsetY: 0
@@ -134,7 +134,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Attack
       takeName: Take 001
-      firstFrame: 133
+      firstFrame: 135
       lastFrame: 245
       wrapMode: 0
       orientationOffsetY: 0

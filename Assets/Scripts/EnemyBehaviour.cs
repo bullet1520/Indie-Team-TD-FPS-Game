@@ -8,6 +8,7 @@ public class EnemyBehaviour : MonoBehaviour {
     public float ownHealth = 10f;
     public GameObject Target;
     public EnemySpawner enemySpawner;
+    public float healthInChange = 100; 
 
     [SerializeField]
     private Objective targetScript;
@@ -21,6 +22,7 @@ public class EnemyBehaviour : MonoBehaviour {
     [SerializeField]
     private float damageDealt = 3;
     
+    private float ownHealthChangePercentage;
     private Transform target;
     private UnityEngine.AI.NavMeshAgent nav;
     private int hasHit;
@@ -56,8 +58,12 @@ public class EnemyBehaviour : MonoBehaviour {
 
     void Update()
     {
-        
-        
+        ownHealthChangePercentage = (ownHealth * 100) / 10;
+        if (healthInChange > ownHealthChangePercentage)
+        {
+            healthInChange = healthInChange - 1;
+        }
+
         if (isdead) //what is this mess doing
         { //if the robot has been killed
             nav.enabled = false; //stop moving
@@ -109,8 +115,4 @@ public class EnemyBehaviour : MonoBehaviour {
     {
         targetScript.TakeDamage(damageDealt);
     }
-  
-
-    
-
 }

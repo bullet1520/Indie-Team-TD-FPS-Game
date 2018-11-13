@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class FloatBotBehaviour : MonoBehaviour {
     ///this script controls the enemy AI, telling it where to go, when to attack and when to die.
-    public GameObject Target;
-    public EnemySpawner enemySpawner;
+    public GameObject Target; //this is assigned by the spawner
+    public EnemySpawner enemySpawner; //this is assigned by the spawner
+    public float ownHealth = 30f; //this is accessed by GunScript
+    public float healthInChange = 100f; //this is accessed by Gunscript
     [SerializeField]
     private Objective targetScript;
     [SerializeField]
@@ -14,11 +16,11 @@ public class FloatBotBehaviour : MonoBehaviour {
     private ParticleSystem robotDeathExplosion;
     [SerializeField]
     private Animator EnemyAnimator;
-    public float ownHealth = 30f;
+    
     private Rigidbody myRigidbody;
     [SerializeField]
     private float damageDealt = 5;
-
+    private float ownHealthChangePercentage;
     private Transform target;
     private UnityEngine.AI.NavMeshAgent nav;
     private int hasHit;
@@ -54,6 +56,12 @@ public class FloatBotBehaviour : MonoBehaviour {
 
     void Update()
     {
+
+        ownHealthChangePercentage = (ownHealth * 100) / 30;
+        if (healthInChange > ownHealthChangePercentage)
+        {
+            healthInChange = healthInChange - 1;
+        }
         if (isdead) //what is this mess doing
         { //if the robot has been killed
             nav.enabled = false; //stop moving

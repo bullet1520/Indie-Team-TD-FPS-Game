@@ -7,7 +7,7 @@ public class UFOBehaviour : MonoBehaviour {
     public Transform objectivePoint; //this is assigned by the enemyspawner script
     public float health = 40f; //this is accessed by the gunscript
     public EnemySpawner mySpawnerScript; //this is assigned by the enemyspawner script.
-
+    public float healthInChange = 100f;
     [SerializeField]
     private float speed = 15f;
     [SerializeField]
@@ -20,6 +20,8 @@ public class UFOBehaviour : MonoBehaviour {
     private ParticleSystem UFODeathParticles;
     [SerializeField]
     private GameObject myOwnCockpit;
+
+    private float ownHealthChangePercentage;
     
 	
 	void Awake ()
@@ -29,6 +31,11 @@ public class UFOBehaviour : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        ownHealthChangePercentage = (health * 100) / 40;
+        if (healthInChange > ownHealthChangePercentage)
+        {
+            healthInChange = healthInChange - 1;
+        }
         if (health == 0)
         {
             Die();
