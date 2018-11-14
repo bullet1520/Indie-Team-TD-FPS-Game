@@ -1,0 +1,325 @@
+fileFormatVersion: 2
+guid: 7c95811131288da49a649edbe8daabcf
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: curve1_instance1
+    100002: curve1_profile
+    100004: curve2_instance1
+    100006: extrudeprofileCurve1
+    100008: group
+    100010: joint1
+    100012: joint10
+    100014: joint11
+    100016: joint12
+    100018: joint13
+    100020: joint14
+    100022: joint2
+    100024: joint3
+    100026: joint4
+    100028: joint5
+    100030: joint6
+    100032: joint7
+    100034: joint8
+    100036: joint9
+    100038: pCube1
+    100040: pCube10
+    100042: pCube11
+    100044: pCube12
+    100046: pCube18
+    100048: pCube18 1
+    100050: pCube2
+    100052: pCube20
+    100054: pCube20 1
+    100056: pCube21
+    100058: pCube21 1
+    100060: pCube22
+    100062: pCube22 1
+    100064: pCube23
+    100066: pCube24
+    100068: pCube25
+    100070: pCube26
+    100072: pCube27
+    100074: pCube28
+    100076: pCube29
+    100078: pCube3
+    100080: pCube30
+    100082: pCube31
+    100084: pCube5
+    100086: pCube6
+    100088: pCube7
+    100090: pCube9
+    100092: pCylinder10
+    100094: pCylinder11
+    100096: pCylinder2
+    100098: pCylinder3
+    100100: pCylinder4
+    100102: pCylinder5
+    100104: pCylinder6
+    100106: pCylinder7
+    100108: pCylinder8
+    100110: pCylinder9
+    100112: pPipe2
+    100114: pPipe2 1
+    100116: pPipe3
+    100118: pPipe3 1
+    100120: pPipe4
+    100122: pPipe4 1
+    100124: pPipe5
+    100126: pPipe5 1
+    100128: ribbonCurveHistory
+    100130: ribbonMeshes
+    100132: //RootNode
+    100134: tubeCurveHistory
+    100136: TubeMesh3
+    100138: TubeMesh4
+    100140: tubeMeshes
+    400000: curve1_instance1
+    400002: curve1_profile
+    400004: curve2_instance1
+    400006: extrudeprofileCurve1
+    400008: group
+    400010: joint1
+    400012: joint10
+    400014: joint11
+    400016: joint12
+    400018: joint13
+    400020: joint14
+    400022: joint2
+    400024: joint3
+    400026: joint4
+    400028: joint5
+    400030: joint6
+    400032: joint7
+    400034: joint8
+    400036: joint9
+    400038: pCube1
+    400040: pCube10
+    400042: pCube11
+    400044: pCube12
+    400046: pCube18
+    400048: pCube18 1
+    400050: pCube2
+    400052: pCube20
+    400054: pCube20 1
+    400056: pCube21
+    400058: pCube21 1
+    400060: pCube22
+    400062: pCube22 1
+    400064: pCube23
+    400066: pCube24
+    400068: pCube25
+    400070: pCube26
+    400072: pCube27
+    400074: pCube28
+    400076: pCube29
+    400078: pCube3
+    400080: pCube30
+    400082: pCube31
+    400084: pCube5
+    400086: pCube6
+    400088: pCube7
+    400090: pCube9
+    400092: pCylinder10
+    400094: pCylinder11
+    400096: pCylinder2
+    400098: pCylinder3
+    400100: pCylinder4
+    400102: pCylinder5
+    400104: pCylinder6
+    400106: pCylinder7
+    400108: pCylinder8
+    400110: pCylinder9
+    400112: pPipe2
+    400114: pPipe2 1
+    400116: pPipe3
+    400118: pPipe3 1
+    400120: pPipe4
+    400122: pPipe4 1
+    400124: pPipe5
+    400126: pPipe5 1
+    400128: ribbonCurveHistory
+    400130: ribbonMeshes
+    400132: //RootNode
+    400134: tubeCurveHistory
+    400136: TubeMesh3
+    400138: TubeMesh4
+    400140: tubeMeshes
+    2100000: lambert1
+    2100002: lambert2
+    4300000: pCube1
+    4300002: pCube25
+    4300004: pCylinder5
+    4300006: pCube18
+    4300008: pCube21
+    4300010: pCube20
+    4300012: pCube22
+    4300014: pPipe4
+    4300016: pPipe3
+    4300018: pPipe5
+    4300020: pPipe2
+    4300022: pCube23
+    4300024: pCube24
+    4300026: TubeMesh3
+    4300028: pCube2
+    4300030: pCylinder2
+    4300032: pCube18
+    4300034: pCube21
+    4300036: pCube20
+    4300038: pCube22
+    4300040: pPipe4
+    4300042: pPipe3
+    4300044: pPipe5
+    4300046: pPipe2
+    4300048: pCube3
+    4300050: TubeMesh4
+    4300052: pCube5
+    4300054: pCube30
+    4300056: pCube28
+    4300058: pCylinder4
+    4300060: pCylinder11
+    4300062: pCube31
+    4300064: pCylinder3
+    4300066: pCylinder10
+    4300068: pCube26
+    4300070: pCube29
+    4300072: pCylinder8
+    4300074: pCylinder7
+    4300076: pCube27
+    4300078: pCylinder9
+    4300080: pCylinder6
+    4300082: pCube6
+    4300084: pCube12
+    4300086: pCube9
+    4300088: pCube7
+    4300090: pCube11
+    4300092: pCube10
+    9500000: //RootNode
+    13700000: pCube1
+    13700002: pCube10
+    13700004: pCube11
+    13700006: pCube12
+    13700008: pCube18
+    13700010: pCube18 1
+    13700012: pCube2
+    13700014: pCube20
+    13700016: pCube20 1
+    13700018: pCube21
+    13700020: pCube21 1
+    13700022: pCube22
+    13700024: pCube22 1
+    13700026: pCube23
+    13700028: pCube24
+    13700030: pCube25
+    13700032: pCube26
+    13700034: pCube27
+    13700036: pCube28
+    13700038: pCube29
+    13700040: pCube3
+    13700042: pCube30
+    13700044: pCube31
+    13700046: pCube5
+    13700048: pCube6
+    13700050: pCube7
+    13700052: pCube9
+    13700054: pCylinder10
+    13700056: pCylinder11
+    13700058: pCylinder2
+    13700060: pCylinder3
+    13700062: pCylinder4
+    13700064: pCylinder5
+    13700066: pCylinder6
+    13700068: pCylinder7
+    13700070: pCylinder8
+    13700072: pCylinder9
+    13700074: pPipe2
+    13700076: pPipe2 1
+    13700078: pPipe3
+    13700080: pPipe3 1
+    13700082: pPipe4
+    13700084: pPipe4 1
+    13700086: pPipe5
+    13700088: pPipe5 1
+    13700090: TubeMesh3
+    13700092: TubeMesh4
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
