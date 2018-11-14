@@ -13,8 +13,8 @@ public class Objective : MonoBehaviour {
     [SerializeField]
     private Camera playerCamera;
     private BoxCollider myOwnCollider;
-    [SerializeField]
-    private ProblemLightSwitcher LightSwitcher;
+    //[SerializeField]
+    //private ProblemLightSwitcher LightSwitcher;
     [SerializeField]
     private bool canTakeDamage = true;
     [SerializeField]
@@ -40,7 +40,7 @@ public class Objective : MonoBehaviour {
     public void TakeDamage(float enemydamage)
     {
         DamageClink.Play();
-        LightSwitcher.SwitchAllToRed();
+       // LightSwitcher.SwitchAllToRed();
         if (canTakeDamage)
         {
             objectiveHealth = objectiveHealth - enemydamage;

@@ -8,7 +8,7 @@ public class EnemyBehaviour : MonoBehaviour {
     public float ownHealth = 10f;
     public GameObject Target;
     public EnemySpawner enemySpawner;
-    public float healthInChange = 100; 
+    public float healthInChange = 100;
 
     [SerializeField]
     private Objective targetScript;
@@ -37,6 +37,7 @@ public class EnemyBehaviour : MonoBehaviour {
         target = Target.transform;
         nav = GetComponent<UnityEngine.AI.NavMeshAgent>();
         myRigidbody = GetComponent<Rigidbody>();
+       
     }
 
     public void TakeExplosiveDamage(float amount, Vector3 explosionPoint) //this needs to take a position

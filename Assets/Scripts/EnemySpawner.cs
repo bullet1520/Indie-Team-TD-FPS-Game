@@ -41,10 +41,16 @@ public class EnemySpawner : MonoBehaviour {
     public float chosenspawnrate = 275f;
     [SerializeField]
     private float currentspawntime = 0f;
-	// Use this for initialization
-	void Start () {
+
+    [SerializeField]
+    private GameObject DropShipWarningTag;
+
+    private DropshipBlinkUI DropWarning;
+    // Use this for initialization
+    void Start () {
         totalEnemiestoStart = totalEnemies;
-	}
+        DropWarning = DropShipWarningTag.GetComponent<DropshipBlinkUI>();
+    }
 	
 	// Update is called once per frame
 	void FixedUpdate ()
@@ -136,7 +142,8 @@ public class EnemySpawner : MonoBehaviour {
             spawnedScript.mySpawnerScript = GetComponent<EnemySpawner>();
             spawnedScript.objectivePoint = UFOObjectivePoints[spawnPointIndex];
             Instantiate(UFO, UFOSpawnPoints[spawnPointIndex].position, UFOSpawnPoints[spawnPointIndex].rotation);
-          
+
+            DropWarning.StartOver();
             foesSinceLastUFO = 0;
         }
         //spawn a ufo every 10 enemies that have been spawned so the player has a little extra challenge to it.
