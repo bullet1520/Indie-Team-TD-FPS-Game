@@ -26,6 +26,10 @@ public class GunScript : MonoBehaviour {
     private float reloadtimer = 0f;
     [SerializeField]
     private GameObject target = null;
+    [SerializeField]
+    private GameObject clickToFireTag;
+
+    private int shotsFired;
     private AudioSource turretShot;
     private Vector3 debughitspace;
     private int layermask = 1 << 8;
@@ -41,6 +45,11 @@ public class GunScript : MonoBehaviour {
          target = null;
         if (!PauseMenuScript.Paused)
         { CheckIfFacingEnemy(); }
+
+        if (shotsFired >= 3)
+        {
+            clickToFireTag.SetActive(false);
+        }
 
         if (Input.GetButtonDown("Fire1") && !PauseMenuScript.Paused)
         {
@@ -76,6 +85,7 @@ public class GunScript : MonoBehaviour {
     {
         turretShot.Play();
         MuzzleFlare.Play();
+        shotsFired = shotsFired + 1;
         RaycastHit hit;
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit))
         {

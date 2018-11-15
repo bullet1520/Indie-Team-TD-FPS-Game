@@ -8,8 +8,8 @@ public class PauseMenuScript : MonoBehaviour {
     public static bool Paused = false;
 
     public GameObject pauseMenuUI;
-   
-
+    [SerializeField]
+    private GameObject PauseInstruction;
 
     void Start()
     {
@@ -21,6 +21,10 @@ public class PauseMenuScript : MonoBehaviour {
     {
         if (Input.GetButtonDown("Pause"))
         {
+            if (PauseInstruction.activeSelf)
+            {
+                PauseInstruction.SetActive(false);
+            }
             if (Paused)
             {
                 ResumeGame();

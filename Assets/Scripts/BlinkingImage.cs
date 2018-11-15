@@ -8,6 +8,8 @@ public class BlinkingImage : MonoBehaviour
 
     int counter;
     int GameTime;
+    [SerializeField]
+    private GameObject instrText;
 
     [SerializeField]
     GameObject ThisUI;   
@@ -36,6 +38,7 @@ public class BlinkingImage : MonoBehaviour
 
         if (GameTime == 200)
         {
+            instrText.SetActive(true);
             ThisUI.SetActive(false);
         }
 	}

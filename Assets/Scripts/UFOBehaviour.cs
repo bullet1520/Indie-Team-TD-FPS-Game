@@ -8,10 +8,11 @@ public class UFOBehaviour : MonoBehaviour {
     public float health = 40f; //this is accessed by the gunscript
     public EnemySpawner mySpawnerScript; //this is assigned by the enemyspawner script.
     public float healthInChange = 100f;
+    public GameObject levelCanvas;
     [SerializeField]
     private float speed = 15f;
     [SerializeField]
-    private float delaytimer = 50f;
+    private float delaytimer = 200f;
     private float deathDelayTimer = 300f;
     private Vector3 aerialObjective;
     [SerializeField]
@@ -20,13 +21,16 @@ public class UFOBehaviour : MonoBehaviour {
     private ParticleSystem UFODeathParticles;
     [SerializeField]
     private GameObject myOwnCockpit;
-
+    [SerializeField]
+    private CanvasAnimationScript restartPlusFiveScript;
+    
     private float ownHealthChangePercentage;
     
 	
 	void Awake ()
     {
         aerialObjective = new Vector3(objectivePoint.position.x, 20, objectivePoint.position.z);
+        restartPlusFiveScript = levelCanvas.GetComponent<CanvasAnimationScript>();
 	}
 	
 	// Update is called once per frame
@@ -100,6 +104,7 @@ public class UFOBehaviour : MonoBehaviour {
         if (transform.position == objectivePoint.position)
         {
             mySpawnerScript.UFOIncreasesSpawnRate();
+            restartPlusFiveScript.ResetTimer();
             Destroy(gameObject);
         }
         //tell the spawner to accelerate the rate at which enemies are spawned then die if you have

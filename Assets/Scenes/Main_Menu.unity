@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -145,7 +145,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 245}
+  m_AnchoredPosition: {x: 240, y: 187}
   m_SizeDelta: {x: 300, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8687967
@@ -4831,8 +4831,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -240, y: -35}
-  m_SizeDelta: {x: 391.6, y: 105}
+  m_AnchoredPosition: {x: -240, y: -26}
+  m_SizeDelta: {x: 391.6, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &189413188
 MonoBehaviour:
@@ -5926,8 +5926,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1049154309}
-        m_MethodName: SetActive
-        m_Mode: 6
+        m_MethodName: 
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -5936,19 +5936,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1848843324}
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1049154311}
+        m_MethodName: buttonclick
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 2050960108}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1848843326}
-        m_MethodName: Play
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5959,8 +5959,8 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 2108979220}
-        m_MethodName: SetActive
-        m_Mode: 6
+        m_MethodName: 
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -10698,7 +10698,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -240, y: 150}
+  m_AnchoredPosition: {x: -248, y: 150}
   m_SizeDelta: {x: 391.6, y: 120.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &974065224
@@ -10733,7 +10733,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Eric Andruszko:\nMenu Crafting and Functions Specialist, Landscaping/Level
+  m_Text: "Eric Andruszko:\nMenu Crafting and \nFunctions Specialist, \nLandscaping/Level
     Sculpting.  \n"
 --- !u!222 &974065225
 CanvasRenderer:
@@ -11040,7 +11040,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 240, y: 35}
+  m_AnchoredPosition: {x: 240, y: -74}
   m_SizeDelta: {x: 391.6, y: 120.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1139018752
@@ -11075,9 +11075,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Melina Espenosa:
-
-    Tiny Robot Master/Craftsman. Robot Animation Wizard.'
+  m_Text: "Melina Espenosa:\nTiny Robot Master/Craftsman. \nRobot Animation Wizard.\nEnvironment
+    Object Engineer"
 --- !u!222 &1139018753
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -13239,7 +13238,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 240, y: 150}
+  m_AnchoredPosition: {x: 240, y: 49}
   m_SizeDelta: {x: 391.6, y: 120.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2063341180
@@ -13274,11 +13273,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Joshua Duffy:
-
-    Turret Engineer, Ordinance Consultant, Turret Spray Paint Artist
-
-'
+  m_Text: "Joshua Duffy:\nTurret Engineer, \nOrdinance Consultant, \nTurret Spray
+    Paint Artist\nUI art and Title Crafter"
 --- !u!222 &2063341181
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -25,7 +25,9 @@ public class EnemySpawner : MonoBehaviour {
     private GameObject UFO;
     [SerializeField]
     private Transform[] UFOObjectivePoints;
-    
+    [SerializeField]
+    private GameObject levelCanvas;
+
     public int totalEnemiestoStart; 
     [SerializeField]
     private int totalEnemies = 100;
@@ -141,6 +143,7 @@ public class EnemySpawner : MonoBehaviour {
             UFOBehaviour spawnedScript = UFO.GetComponent<UFOBehaviour>();
             spawnedScript.mySpawnerScript = GetComponent<EnemySpawner>();
             spawnedScript.objectivePoint = UFOObjectivePoints[spawnPointIndex];
+            spawnedScript.levelCanvas = levelCanvas;
             Instantiate(UFO, UFOSpawnPoints[spawnPointIndex].position, UFOSpawnPoints[spawnPointIndex].rotation);
 
             DropWarning.StartOver();
