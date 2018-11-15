@@ -10019,7 +10019,7 @@ Prefab:
     - target: {fileID: 114067151395731200, guid: f410ba4b9fe787d49998a33ac9d0cd24,
         type: 2}
       propertyPath: canTakeDamage
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f410ba4b9fe787d49998a33ac9d0cd24, type: 2}
