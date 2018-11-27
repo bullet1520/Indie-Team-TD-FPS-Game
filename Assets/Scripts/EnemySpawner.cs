@@ -47,6 +47,12 @@ public class EnemySpawner : MonoBehaviour {
     [SerializeField]
     private GameObject DropShipWarningTag;
 
+    [SerializeField]
+    private Camera PlayerCamera;
+
+    [SerializeField]
+    private Transform wayPointArrowSpawnPoint;
+
     private DropshipBlinkUI DropWarning;
     // Use this for initialization
     void Start () {
@@ -144,6 +150,8 @@ public class EnemySpawner : MonoBehaviour {
             spawnedScript.mySpawnerScript = GetComponent<EnemySpawner>();
             spawnedScript.objectivePoint = UFOObjectivePoints[spawnPointIndex];
             spawnedScript.levelCanvas = levelCanvas;
+            spawnedScript.PlayerCamera = PlayerCamera;
+            spawnedScript.wayPointArrowSpawnPoint = wayPointArrowSpawnPoint;
             Instantiate(UFO, UFOSpawnPoints[spawnPointIndex].position, UFOSpawnPoints[spawnPointIndex].rotation);
 
             DropWarning.StartOver();

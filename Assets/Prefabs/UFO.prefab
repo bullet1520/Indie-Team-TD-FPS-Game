@@ -158,10 +158,10 @@ GameObject:
   - component: {fileID: 4178989198313584}
   - component: {fileID: 33932474459418758}
   - component: {fileID: 23521970543342324}
-  - component: {fileID: 135079283590244106}
   - component: {fileID: 54269327110214172}
   - component: {fileID: 114930516449521902}
   - component: {fileID: 82564445935212802}
+  - component: {fileID: 65439264296206490}
   m_Layer: 8
   m_Name: UFO
   m_TagString: Untagged
@@ -261,7 +261,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1682121236998412}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 133.76271, y: 3.37, z: 125.81805}
+  m_LocalPosition: {x: 445.5019, y: 430.6568, z: -496.15472}
   m_LocalScale: {x: 6, y: 2, z: 6}
   m_Children:
   - {fileID: 4774472042712062}
@@ -548,6 +548,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
+--- !u!65 &65439264296206490
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1682121236998412}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.95, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!82 &82564445935212802
 AudioSource:
   m_ObjectHideFlags: 1
@@ -658,27 +670,19 @@ MonoBehaviour:
   health: 40
   mySpawnerScript: {fileID: 0}
   healthInChange: 100
+  levelCanvas: {fileID: 0}
+  wayPointArrowSpawnPoint: {fileID: 0}
+  PlayerCamera: {fileID: 0}
+  myOwnCollider: {fileID: 65439264296206490}
   speed: 15
   delaytimer: 200
   atAerialObjective: 0
   UFODeathParticles: {fileID: 198944132696956462}
   myOwnCockpit: {fileID: 1001327818027606}
-  plusFiveAnimator: {fileID: 0}
-  plusFiveAnimation: {fileID: 0}
-  plusFiveText: {fileID: 0}
   restartPlusFiveScript: {fileID: 0}
---- !u!135 &135079283590244106
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1682121236998412}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.45
-  m_Center: {x: 0, y: 0, z: -0.05}
+  isVisibleByCamera: 0
+  myOwnWaypointArrow: {fileID: 1315144950789020, guid: b3677a3d86b6e16489048c913b3b6672,
+    type: 2}
 --- !u!135 &135443001135311148
 SphereCollider:
   m_ObjectHideFlags: 1

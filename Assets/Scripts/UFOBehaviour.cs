@@ -9,11 +9,17 @@ public class UFOBehaviour : MonoBehaviour {
     public EnemySpawner mySpawnerScript; //this is assigned by the enemyspawner script.
     public float healthInChange = 100f;
     public GameObject levelCanvas;
+    public Transform wayPointArrowSpawnPoint;
+    public Camera PlayerCamera;
+    [SerializeField]
+    private BoxCollider myOwnCollider;
+
+    
     [SerializeField]
     private float speed = 15f;
     [SerializeField]
     private float delaytimer = 200f;
-    private float deathDelayTimer = 300f;
+    public float deathDelayTimer = 300f;
     private Vector3 aerialObjective;
     [SerializeField]
     private bool atAerialObjective = false;
@@ -23,7 +29,14 @@ public class UFOBehaviour : MonoBehaviour {
     private GameObject myOwnCockpit;
     [SerializeField]
     private CanvasAnimationScript restartPlusFiveScript;
-    
+   
+    public bool isVisibleByCamera;
+    [SerializeField]
+    private GameObject myOwnWaypointArrow;
+    private bool hasSpawnedArrow = false;
+    private WayPointArrow spawnedScript;
+
+
     private float ownHealthChangePercentage;
     
 	
@@ -31,11 +44,18 @@ public class UFOBehaviour : MonoBehaviour {
     {
         aerialObjective = new Vector3(objectivePoint.position.x, 20, objectivePoint.position.z);
         restartPlusFiveScript = levelCanvas.GetComponent<CanvasAnimationScript>();
-	}
+       spawnedScript = myOwnWaypointArrow.GetComponent<WayPointArrow>();
+    }
 	
 	// Update is called once per frame
 	void Update () {
+        if (!hasSpawnedArrow)
+        {
+            SpawnWaypointArrowOnAppearing();
+            hasSpawnedArrow = true;
+        }
         ownHealthChangePercentage = (health * 100) / 40;
+        CheckIfVisibleByCamera();
         if (healthInChange > ownHealthChangePercentage)
         {
             healthInChange = healthInChange - 1;
@@ -50,6 +70,16 @@ public class UFOBehaviour : MonoBehaviour {
             CheckIfLanded();
         }
 	}
+
+    void CheckIfVisibleByCamera()
+    {
+        if (GeometryUtility.TestPlanesAABB(GeometryUtility.CalculateFrustumPlanes(PlayerCamera), myOwnCollider.bounds))
+        {
+            isVisibleByCamera = true;
+        }
+        else
+        { isVisibleByCamera = false; }
+    }
 
     private void Move()
     {
@@ -84,6 +114,7 @@ public class UFOBehaviour : MonoBehaviour {
     {
         if (deathDelayTimer == 0)
         {
+           
             Destroy(gameObject);
         }
         else if (deathDelayTimer == 300)
@@ -91,6 +122,7 @@ public class UFOBehaviour : MonoBehaviour {
             UFODeathParticles.Play();
             GetComponent<MeshRenderer>().enabled = false;
             myOwnCockpit.GetComponent<MeshRenderer>().enabled = false;
+            
             deathDelayTimer = deathDelayTimer - 1;
         }
         else if (deathDelayTimer > 0)
@@ -113,5 +145,15 @@ public class UFOBehaviour : MonoBehaviour {
     public void TakeDamage(float damage)
     {
         health = health - damage;
+    }
+
+    private void SpawnWaypointArrowOnAppearing()
+    {
+       
+        spawnedScript.TargetObject = this.gameObject;
+        spawnedScript.Root = PlayerCamera.GetComponent<CameraMotion>();
+        spawnedScript.playerCamera = PlayerCamera;
+        spawnedScript.canvasTransform = levelCanvas.GetComponent<Transform>();
+        Instantiate(myOwnWaypointArrow, wayPointArrowSpawnPoint.position, wayPointArrowSpawnPoint.rotation);
     }
 }

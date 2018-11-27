@@ -8,8 +8,8 @@ public class Objective : MonoBehaviour {
     //and holds a function for the enemy to call that deals damage to it.
     [SerializeField]
     private AudioSource DamageClink;
-    [SerializeField]
-    private bool isVisibleByPlayerCamera;
+
+    public bool isVisibleByPlayerCamera; //this is accessed by the WayPointArrow Script
     [SerializeField]
     private Camera playerCamera;
     private BoxCollider myOwnCollider;
@@ -22,6 +22,9 @@ public class Objective : MonoBehaviour {
     [SerializeField]
     private float objectiveHealth = 100;
     private WinLoseScript winLoseScript;
+    [SerializeField]
+    private WayPointArrow attachedArrow;
+
     private void Start()
     {
         winLoseScript = GetComponent<WinLoseScript>();
@@ -40,6 +43,7 @@ public class Objective : MonoBehaviour {
     public void TakeDamage(float enemydamage)
     {
         DamageClink.Play();
+        attachedArrow.addToDamageTimerIfOnObjective();
        // LightSwitcher.SwitchAllToRed();
         if (canTakeDamage)
         {
