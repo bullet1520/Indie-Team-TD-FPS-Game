@@ -35,6 +35,7 @@ public class FloatBotBehaviour : MonoBehaviour {
     private bool isdead = false;
     private int deathtimer = 200;
     private Vector3 cannonImpactPoint;
+    private bool isAttacking = false;
 
     void Awake()
     {
@@ -90,31 +91,45 @@ public class FloatBotBehaviour : MonoBehaviour {
         }
         else if (!isdead)
         {
-            if (Vector3.Distance(transform.position, target.position) < 3f) //if close enough to target
-            {
-                nav.enabled = false; // stop moving
-                EnemyAnimator.SetBool("isAttacking", true); //play your attacking animation
-                if (hasHit == 0 && !PauseMenuScript.Paused && !isdead) //check a timer to keep it from hitting every frame, rather hit every couple seconds
+            
+                if (Vector3.Distance(transform.position, target.position) < 3f) //if close enough to target
                 {
-                    HitTarget();
-                    hasHit = 100;
+                    isAttacking = true;
+                    nav.enabled = false; // stop moving
+                    EnemyAnimator.SetBool("isAttacking", true); //play your attacking animation
+                    if (hasHit == 0 && !PauseMenuScript.Paused && !isdead) //check a timer to keep it from hitting every frame, rather hit every couple seconds
+                    {
+                        HitTarget();
+                        hasHit = 100;
+                    }
+                    else if (!PauseMenuScript.Paused && !isdead)
+                    { hasHit = hasHit - 1; }
                 }
-                else if (!PauseMenuScript.Paused && !isdead)
-                { hasHit = hasHit - 1; }
-            }
-            else // if not close enough to target
-            {
-                nav.enabled = true; // keep moving at the target
-                nav.SetDestination(target.position);
-                EnemyAnimator.SetBool("isAttacking", false); //stop playing an attack animation
-            }
+                else if (Vector3.Distance(transform.position, target.position) >= 3f && !isAttacking) // if not close enough to target
+                {
+                    nav.enabled = true; // keep moving at the target
+                    nav.SetDestination(target.position);
+                    EnemyAnimator.SetBool("isAttacking", false); //stop playing an attack animation
+                }
+                else if (Vector3.Distance(transform.position, target.position) >= 3f && isAttacking)
+                {
+                    nav.enabled = false;
+                    EnemyAnimator.SetBool("isAttacking", true);
+                    if (hasHit == 0 && !PauseMenuScript.Paused && !isdead)
+                    {
+                        HitTarget();
+                        hasHit = 100;
+                    }
+                    else if (!PauseMenuScript.Paused && !isdead)
+                    { hasHit = hasHit - 1; }
+                }
 
-            if (hasHit != 0) //the timer still goes down if the target has moved
-            { hasHit = hasHit - 1; }
+                if (hasHit != 0) //the timer still goes down if the target has moved
+                { hasHit = hasHit - 1; }
+
             
         }
     }
-
     void HitTarget()
     {
         targetScript.TakeDamage(damageDealt);

@@ -30,6 +30,8 @@ public class EnemyBehaviour : MonoBehaviour {
     private bool isdead = false;
     private int deathtimer = 100;
     private Vector3 cannonImpactPoint;
+    private bool isAttacking = false;
+
 
     void Awake()
     {
@@ -87,6 +89,7 @@ public class EnemyBehaviour : MonoBehaviour {
         {
             if (Vector3.Distance(transform.position, target.position) < 3f) //if close enough to target
             {
+                isAttacking = true;
                 nav.enabled = false; // stop moving
                 EnemyAnimator.SetBool("isattacking", true); //play your attacking animation
                 if (hasHit == 0 && !PauseMenuScript.Paused && !isdead) //check a timer to keep it from hitting every frame, rather hit every couple seconds
@@ -97,11 +100,23 @@ public class EnemyBehaviour : MonoBehaviour {
                 else if (!PauseMenuScript.Paused && !isdead)
                 { hasHit = hasHit - 1; }
             }
-            else // if not close enough to target
+            else if (Vector3.Distance(transform.position, target.position) >= 3f && !isAttacking) // if not close enough to target
             {
                 nav.enabled = true; // keep moving at the target
                 nav.SetDestination(target.position);
                 EnemyAnimator.SetBool("isattacking", false); //stop playing an attack animation
+            }
+            else if (Vector3.Distance(transform.position, target.position) >= 3f && isAttacking)
+            {
+                nav.enabled = false; 
+                EnemyAnimator.SetBool("isattacking", true); 
+                if (hasHit == 0 && !PauseMenuScript.Paused && !isdead) 
+                {
+                    HitTarget();
+                    hasHit = 100;
+                }
+                else if (!PauseMenuScript.Paused && !isdead)
+                { hasHit = hasHit - 1; }
             }
 
             if (hasHit != 0) //the timer still goes down if the target has moved
