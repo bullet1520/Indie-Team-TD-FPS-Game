@@ -47,7 +47,7 @@ public class WinLoseScript : MonoBehaviour
         Cursor.visible = true;
     }
 
-    void Retry()
+    public void Retry()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
