@@ -135,10 +135,15 @@ public class UFOBehaviour : MonoBehaviour {
     {
         if (transform.position == objectivePoint.position)
         {
+            deathDelayTimer = 1;
+        }
+        if (deathDelayTimer == 1)
+        {
             mySpawnerScript.UFOIncreasesSpawnRate();
             restartPlusFiveScript.ResetTimer();
             Destroy(gameObject);
         }
+
         //tell the spawner to accelerate the rate at which enemies are spawned then die if you have
     }
 

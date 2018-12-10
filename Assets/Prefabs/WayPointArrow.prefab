@@ -43,6 +43,7 @@ MonoBehaviour:
   Root: {fileID: 0}
   TargetObject: {fileID: 0}
   ownImage: {fileID: 114757663464549064}
+  canvasTransform: {fileID: 0}
   playerCamera: {fileID: 0}
   isFlipped: 0
   occupiedEdge: 
@@ -73,7 +74,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: ddbb01af44001a646b7334539fcec4ab, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e1c9abc7a746b314aabd24942dcc8322, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
